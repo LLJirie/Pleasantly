@@ -222,3 +222,6 @@ function customizedURL() {
     })
 
 }
+// modal
+ $('.modal').modal();
+
