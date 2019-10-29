@@ -1,4 +1,4 @@
-# Project1
+# Project1 - Recipe Site
 
 Project description
 Online resource for recipes with limited item in the user's home.
@@ -9,4 +9,3 @@ so I CAN save more money.
 Given I m a general user WHEN I input my desired ingredients (1,3,5) then a recipe it's generated.
 Apis
 Edaman , Spell check
-

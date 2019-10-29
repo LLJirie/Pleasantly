@@ -1,14 +1,44 @@
 
 body {
-    display: flex;
+     display: flex;
     min-height: 100vh;
     flex-direction: column;     
     font-family: 'Montserrat', sans-serif; 
     /* background-image: url("/Project1/assets/css/bgpic1.jpeg") */
-
-
-
+    min-height: 100vh;
   }
+
+h6 {
+    font-weight: bold;
+  }
+
+/* main {
+    flex: 1 0 auto;
+  } */
+
+nav {
+    background-color: #E85A4F;
+}
+
+.card {
+    /* width: 300px;
+    height: 300px; */
+    overflow: hidden;
+}
+ /* ul {
+     font-weight: bold;
+ } */
+
+ .card-title {
+     text-align: center;
+     font-weight: bold;
+ }
+ footer {
+     position: absolute;
+     left: 0;
+     right: 0;
+     bottom: 0;
+ }
 
   main {
     flex: 50 auto;
@@ -56,4 +86,3 @@ flex-direction: row;
     background-color: tomato;
     color: white;
     padding: 0; 
-
