@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;     
+    font-family: 'Montserrat', sans-serif; 
+    /* background-image: url("/Project1/assets/css/bgpic1.jpeg") */
+
+
+
+  }
+
+  main {
+    flex: 50 auto;
+    /* background-color: #eae7dc; */
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-image: url("https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  }
+
+
+  .headerDiv {
+      background-color: #d8c3a5
+  }
+
+
+  .recipeSearchDiv{
+      margin-top: 60px
+
+  }
+
+  .recipeSearchDiv, .ingredientsDiv {
+
+display: flex;
+flex-direction: row;
+
+  }
+
+  .bttnSubmit {
+
+    background-color:  #e85a4f ;
+ }
+
+ .footerDiv {
+    background-color: #d8c3a5;
+    margin-bottom: 0px;
+
+ }
+  
