@@ -141,13 +141,27 @@ function renderRecipes(arrayOfOptions) {
         buttonRemove.className = "bttnSubmit waves-effect waves-light btn-small"
         buttonRemove.textContent = "remove"
 
+        // var buttonRemove = $("<a>").text($("<i>").attr("class", "small material-icons"));
+        // // var listIcon = $("<i>").attr("class", "small material-icons")
+        // listIcon.text("cancel");
+        // buttonRemove.text(listIcon);
+        // // buttonRemove.className = "bttnSubmit waves-effect waves-light btn-small"
+        // // buttonRemove.text('cancel');
+        // console.log(buttonRemove);
+
+        // li.prepend(buttonRemove)
+        // li.append(buttonRemove);
+
+
 //                 if (!mainIngredient) {
 //                     alert("Please enter something in the text box")
 //                 } else {
 
 
         li.append(buttonRemove)
+
         list.append(li);
+        list.append(buttonRemove);
     }
 //                     renderIngredients()
 //                     localStorage.setItem("ingredientsUsed", ingredientsUsed)
@@ -158,7 +172,6 @@ function initialURL() {
         method: "GET"
     }).then(response => {
         var item = response.hits
-
         renderRecipes(item)
     })
 
