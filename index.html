@@ -13,6 +13,7 @@
 
     <title>Document</title>
 </head>
+
 <body>
 
 
@@ -43,13 +44,14 @@
                                 <div class="input-field col s12">
                                     <div class="row recipeSearchDiv">
                                         <input placeholder="Recipe Search" id="recipeSearch" type="text">
-                                        <a class="bttnSubmit waves-effect waves-light btn-small">Submit</a>
+                                        <a id="submitRecipe"
+                                            class="bttnSubmit waves-effect waves-light btn-small">Submit</a>
                                     </div>
 
                                     <div class="row ingredientsDiv">
                                         <input placeholder="Search by Ingredients" id="mainIngredient" type="text">
-                                        <a class="btn-floating waves-effect waves-light btn-small">
-                                            <i class="material-icons">+</i></a>
+                                        <a class="btn-floating waves-effect waves-light bttnSubmit ">
+                                            <i id="submitIngredient" class="material-icons">+</i></a>
                                     </div>
 
 
@@ -68,7 +70,7 @@
 
                 <div class="col" id="appendedContent">
 
-                    <ul>
+                    <ul id="ingredientList">
 
                     </ul>
 
@@ -78,40 +80,41 @@
             </div>
     </main>
 
-      
 
-<!-- Modal Trigger -->
-<button data-target="modal1" class="btn modal-trigger">Modal</button>
 
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
+    <!-- Modal Trigger -->
+    <button data-target="modal1" class="btn modal-trigger">Modal</button>
 
-    <div class="modal-content">
-        <div class="row">
-            <div class="col s12">
-                <h1>Chicken</h1>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+
+        <div class="modal-content">
+            <div class="row">
+                <div class="col s12">
+                    <h1>Chicken</h1>
+                </div>
+
             </div>
 
+            <div class="col">
+                <img src="http://placehold.it/150x150" alt="Placeholder" class="img=thumbnail">
+            </div>
         </div>
-        
-     <div class="col">
-            <img src="http://placehold.it/150x150" alt="Placeholder" class="img=thumbnail">
-     </div> 
-    </div>
-    
-   
 
-    <div class="row">
+
+
+        <div class="row">
             <div class="grid-example col s12"><span class="flow-text">I am always full-width (col s12)</span></div>
-            <div class="grid-example col s12 m6"><span class="flow-text">I am full-width on mobile (col s12 m6)</span></div>
-          </div>
+            <div class="grid-example col s12 m6"><span class="flow-text">I am full-width on mobile (col s12 m6)</span>
+            </div>
+        </div>
 
-    <div class="modal-footer">
-        
-      <!-- <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a> -->
+        <div class="modal-footer">
+
+            <!-- <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a> -->
+        </div>
     </div>
-  </div>
-      
+
     <footer>
         <div class="footer-copyright footerDiv">
             <div class="container">
@@ -121,19 +124,17 @@
             </div>
 
         </div>
-    </footer>    
-   
-   <!-- jquery -->
-   <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-  <!-- Materialize JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
-          <!-- our js -->
- 
+    </footer>
 
-  <script src="assets/js/script.js"></script>   
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- our js -->
+
+
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>
-        
