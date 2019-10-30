@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<body onload="initialURL()">
     <header>
         <nav>
             <div class="nav-wrapper">
@@ -43,163 +43,11 @@
     </header>
     <div class="container">
         <div class="row">
-            <div class="col m2 l3">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator"
-                            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/chicken-fajitas-horizontal-jpg-1522721531.jpg?crop=1.00xw:0.752xh;0,0.118xh&resize=980:*"
-                            style="width:300px;height:200 px">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Fajitas
-                            <!-- <i class="material-icons right">more_vert</i> -->
-                        </span>
 
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Chicken Fajitas
-                            <!-- <i class="material-icons right">close</i> -->
-                        </span>
-                        <div class="row">
-                            <div class="col s6">
-                                <!-- <p>Ingredients:</p> -->
-                                <h6>Ingredients:</h6>
-                                <ul>
-                                    <li>Chicken</li>
-                                    <li>Bell Pepper</li>
-                                    <li>Onion</li>
-                                    <li>Salt</li>
-                                    <li>Chocolate</li>
-                                </ul>
-                            </div>
-                            <div class="col s6">
-                                <p>Cook Time: 30min</p>
-                                <p>Calories: 700cal/serving</p>
-                            </div>
-                        </div>
-                        <p><a href="#">See Full Recipe</a></p>
-                    </div>
-                </div>
+            <div class="row" id="foodLineupDisplay">
+
             </div>
-            <div class="col m2 l3">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator"
-                            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/chicken-fajitas-horizontal-jpg-1522721531.jpg?crop=1.00xw:0.752xh;0,0.118xh&resize=980:*"
-                            style="width:300px;height:200 px">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Fajitas
-                            <!-- <i class="material-icons right">more_vert</i> -->
-                        </span>
-
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Chicken Fajitas
-                            <!-- <i class="material-icons right">close</i> -->
-                        </span>
-                        <div class="row">
-                            <div class="col s6">
-                                <!-- <p>Ingredients:</p> -->
-                                <h6>Ingredients:</h6>
-                                <ul>
-                                    <li>Chicken</li>
-                                    <li>Bell Pepper</li>
-                                    <li>Onion</li>
-                                    <li>Salt</li>
-                                    <li>Chocolate</li>
-                                </ul>
-                            </div>
-                            <div class="col s6">
-                                <p>Cook Time: 30min</p>
-                                <p>Calories: 700cal/serving</p>
-                            </div>
-                        </div>
-                        <p><a href="#">See Full Recipe</a></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col m2 l3">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator"
-                            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/chicken-fajitas-horizontal-jpg-1522721531.jpg?crop=1.00xw:0.752xh;0,0.118xh&resize=980:*"
-                            style="width:300px;height:200 px">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Fajitas
-                            <!-- <i class="material-icons right">more_vert</i> -->
-                        </span>
-
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Chicken Fajitas
-                            <!-- <i class="material-icons right">close</i> -->
-                        </span>
-                        <div class="row">
-                            <div class="col s6">
-                                <!-- <p>Ingredients:</p> -->
-                                <h6>Ingredients:</h6>
-                                <ul>
-                                    <li>Chicken</li>
-                                    <li>Bell Pepper</li>
-                                    <li>Onion</li>
-                                    <li>Salt</li>
-                                    <li>Chocolate</li>
-                                </ul>
-                            </div>
-                            <div class="col s6">
-                                <p>Cook Time: 30min</p>
-                                <p>Calories: 700cal/serving</p>
-                            </div>
-                        </div>
-                        <p><a href="#">See Full Recipe</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col m2 l3">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator"
-                            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/chicken-fajitas-horizontal-jpg-1522721531.jpg?crop=1.00xw:0.752xh;0,0.118xh&resize=980:*"
-                            style="width:300px;height:200 px">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Fajitas
-                            <!-- <i class="material-icons right">more_vert</i> -->
-                        </span>
-
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Chicken Fajitas
-                            <!-- <i class="material-icons right">close</i> -->
-                        </span>
-                        <div class="row">
-                            <div class="col s6">
-                                <!-- <p>Ingredients:</p> -->
-                                <h6>Ingredients:</h6>
-                                <ul>
-                                    <li>Chicken</li>
-                                    <li>Bell Pepper</li>
-                                    <li>Onion</li>
-                                    <li>Salt</li>
-                                    <li>Chocolate</li>
-                                </ul>
-                            </div>
-                            <div class="col s6">
-                                <p>Cook Time: 30min</p>
-                                <p>Calories: 700cal/serving</p>
-                            </div>
-                        </div>
-                        <p><a href="#">See Full Recipe</a></p>
-
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
 
 
     </div>
@@ -229,6 +77,10 @@
         </div>
     </footer>
     <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
