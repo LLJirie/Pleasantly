@@ -73,16 +73,31 @@ flex-direction: row;
 
  .footerDiv {
     background-color: #d8c3a5;
-    margin-bottom: 0px;
+    margin-bottom: 0px;}
 
 
 /*  ------ testing------ */
-.col.grid-example {
+.grid-example {
     border: 1px solid #eee;
     margin: 7px 0;
     text-align: center;
     line-height: 50px;
     font-size: 28px;
-    background-color: tomato;
+    background-color: #E85A4F;
     color: white;
     padding: 0; 
+}
+.recipeHeader {
+  font-size: 20px;
+  background-color: #8E8D8A;
+  color: white;
+
+
+}
+.recipeImage {
+  overflow: auto;
+}
+@media screen and (max-width: 760px) {
+}
+ @media screen and (max-width: 480px){
+ }

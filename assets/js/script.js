@@ -308,5 +308,5 @@ $("#filterButton").on("click", function () {
 
 
 // modal
-// $('.modal').modal();
+$('.modal').modal();
 
