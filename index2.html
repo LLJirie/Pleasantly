@@ -5,25 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <title>Drinks</title>
 </head>
 
 <body>
 
-
-    <input id="ingredient" type="text">
-    <button id="bttnIngredient ">submit</button>
-
-
     <input id="drinkname" type="text">
-    <button id="bttnName">submit</button>
+    <button id="bttnDrinkSearch">submit</button>
 
     <div id="resultsDiv">
 
     </div>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="assets/js/script.js"></script>
+
+    <!-- Modal Trigger -->
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+    <!-- Modal Structure -->
+    <div id="modalIfStatment" class="modal">
+        <div class="modal-content">
+            <h4>Opsii..</h4>
+            <p>We dont's have yet this recipe in our database! Pick another one , please.</p>
+        </div>
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="assets/js/coktails.js"></script>
+
 
 
 </body>
