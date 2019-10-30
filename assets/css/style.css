@@ -75,6 +75,13 @@ flex-direction: row;
     background-color: #d8c3a5;
     margin-bottom: 0px;}
 
+ }
+
+.font-p{
+  font-family: 'Montserrat', sans-serif; 
+
+}
+
 
 /*  ------ testing------ */
 .grid-example {
