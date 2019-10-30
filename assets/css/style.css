@@ -87,3 +87,13 @@ flex-direction: row;
     color: white;
     padding: 0; 
 }
+.recipeHeader {
+  font-size: 20px;
+  background-color: #d8c3a5;
+  color: white;
+
+
+}
+.recipeImage {
+  overflow: auto;
+}

@@ -334,5 +334,5 @@ function customizedURL() {
 
 
 // modal
-// $('.modal').modal();
+$('.modal').modal();
 
