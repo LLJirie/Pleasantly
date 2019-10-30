@@ -1,6 +1,4 @@
 
-
-
 var numIngredients = $("#numIngredients")
 var ingredientDisplay = $("#indgredientDisplay")
 var submitRecipe = $("#submitRecipe")
