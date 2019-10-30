@@ -73,11 +73,11 @@ flex-direction: row;
 
  .footerDiv {
     background-color: #d8c3a5;
-    margin-bottom: 0px;
+    margin-bottom: 0px;}
 
 
 /*  ------ testing------ */
-.col.grid-example {
+.grid-example {
     border: 1px solid #eee;
     margin: 7px 0;
     text-align: center;
@@ -86,3 +86,4 @@ flex-direction: row;
     background-color: tomato;
     color: white;
     padding: 0; 
+}
