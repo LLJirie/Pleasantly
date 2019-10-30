@@ -22,8 +22,6 @@ $("#bttnDrinkSearch").on("click", function drinkSearch(e) {
 
             instance.open("#modalIfStatment");
 
-
-
         }
 
 
@@ -63,7 +61,27 @@ $("#bttnDrinkSearch").on("click", function drinkSearch(e) {
 
 
 
+            var colDiv = $("<div>").data("site", element.recipe.uri)
+            colDiv.addClass("col s12 m6 l4")
+            colDiv.append(cardDiv)
 
+            //Append most the stuff to this
+            var cardImgDiv = $("<div>")
+            cardImgDiv.addClass("card-image waves-effect waves-block waves-light")
+            cardImgDiv.append(recipeImage)
+
+            var cardDiv = $("<div>")
+            cardDiv.addClass("card")
+            cardDiv.append(cardImgDiv)
+
+            var cardContentDiv = $("<div>")
+            cardContentDiv.addClass("card-content")
+            cardContentDiv.css("height", "100px")
+            cardDiv.append(cardContentDiv)
+
+            var recipeTitle = $("<span>").text(element.recipe.label)
+            recipeTitle.addClass("card-title grey-text  activator text-darken-4")
+            cardContentDiv.append(recipeTitle)
 
 
 
