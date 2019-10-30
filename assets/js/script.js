@@ -147,10 +147,18 @@ function renderIngredients() {
         var buttonRemove = document.createElement("button")
         buttonRemove.className = "bttnSubmit waves-effect waves-light btn-small"
         buttonRemove.textContent = "remove"
+        // var buttonRemove = $("<a>").text($("<i>").attr("class", "small material-icons"));
+        // // var listIcon = $("<i>").attr("class", "small material-icons")
+        // listIcon.text("cancel");
+        // buttonRemove.text(listIcon);
+        // // buttonRemove.className = "bttnSubmit waves-effect waves-light btn-small"
+        // // buttonRemove.text('cancel');
+        // console.log(buttonRemove);
 
-
-        li.append(buttonRemove)
+        // li.prepend(buttonRemove)
+        // li.append(buttonRemove);
         list.append(li);
+        list.append(buttonRemove);
     }
 
 }
@@ -161,7 +169,6 @@ function initialURL() {
         method: "GET"
     }).then(response => {
         var item = response.hits
-
         renderRecipes(item)
     })
 

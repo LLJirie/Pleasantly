@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -35,27 +37,29 @@
     <main>
         <div class="container mainDiv">
             <div class="row">
-                <div class="col s12 col m6">
+                <div class="col s12 col m8" id="searchRow">
 
                     <div class="row">
                         <form class="col s12">
+                            <div class="row recipeSearchDiv">
+                                <div class="col s8">
+                                    <input placeholder="Recipe Search" id="recipeSearch" type="text">
+                                    <a id="submitRecipe"
+                                        class="bttnSubmit waves-effect waves-light btn-small">Submit</a>
+                                </div>
+                            </div>
 
-                            <div class="row ">
-                                <div class="input-field col s12">
-                                    <div class="row recipeSearchDiv">
-                                        <input placeholder="Recipe Search" id="recipeSearch" type="text">
-                                        <a id="submitRecipe"
-                                            class="bttnSubmit waves-effect waves-light btn-small">Submit</a>
-                                    </div>
+                            <div class="row ingredientsDiv">
+                                <div class="col s8">
+                                    <input placeholder="Search by Ingredient (Max 10)" id="mainIngredient" type="text">
+                                    <ul id="ingredientList">
 
-                                    <div class="row ingredientsDiv">
-                                        <input placeholder="Search by Ingredients" id="mainIngredient" type="text">
-                                        <a class="btn-floating waves-effect waves-light bttnSubmit ">
-                                            <i id="submitIngredient" class="material-icons">+</i></a>
-                                    </div>
-
-
-
+                                    </ul>
+                                    <a id="submitRecipe"
+                                        class="bttnSubmit waves-effect waves-light btn-small">Submit</a>
+                                </div>
+                                <div class="col s4" id="add-icon">
+                                    <i id="submitIngredient" class="small material-icons">add_circle_outline</i>
                                 </div>
 
                             </div>
@@ -68,7 +72,7 @@
 
                 </div>
 
-                <div class="col" id="appendedContent">
+                <!-- <div class="col" id="appendedContent">
 
                     <ul id="ingredientList">
 
@@ -76,7 +80,7 @@
 
 
 
-                </div>
+                </div> -->
             </div>
     </main>
 
@@ -103,26 +107,21 @@
 
 
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="grid-example col s12"><span class="flow-text">I am always full-width (col s12)</span></div>
             <div class="grid-example col s12 m6"><span class="flow-text">I am full-width on mobile (col s12 m6)</span>
             </div>
-        </div>
+        </div> -->
 
-        <div class="modal-footer">
+        <!-- <div class="modal-footer">
 
-            <!-- <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a> -->
-        </div>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div> -->
     </div>
 
     <footer>
         <div class="footer-copyright footerDiv">
-            <div class="container">
-                <p class="grey-text text-lighten-4 center">© 2014 Copyright </p>
-
-
-            </div>
-
+            <p class="grey-text text-lighten-4 center">© 2014 Copyright </p>
         </div>
     </footer>
 
