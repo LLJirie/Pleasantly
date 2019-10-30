@@ -1,6 +1,3 @@
-
-
-
 var numIngredients = $("#numIngredients")
 var ingredientDisplay = $("#indgredientDisplay")
 var submitRecipe = $("#submitRecipe")
@@ -9,32 +6,32 @@ var ingredientsUsed = []
 var list = $("#ingredientList")
 var listDisplay = true;
 
-//Build the URL based on input from the user
-function buildQueryURL() {
+// //Build the URL based on input from the user
+// function buildQueryURL() {
 
-    //Get the info from the home page local storage
-    console.log(ingredientsUsed)
-    var mainIngredientStorage = localStorage.getItem("ingredientsUsed")
-    var recipeSearchStorage = localStorage.getItem("recipeSearch");
+//     //Get the info from the home page local storage
+//     console.log(ingredientsUsed)
+//     var mainIngredientStorage = localStorage.getItem("ingredientsUsed")
+//     var recipeSearchStorage = localStorage.getItem("recipeSearch");
 
-    //starting URL for the basic search to api
-    var queryURL = "https://api.edamam.com/search?";
+//     //starting URL for the basic search to api
+//     var queryURL = "https://api.edamam.com/search?";
 
-    var queryParams = {
-        "app_key": "8957d27cc38cf199423e6dda197aacc5",
-        "app_id": "013f9e16",
-    };
+//     var queryParams = {
+//         "app_key": "8957d27cc38cf199423e6dda197aacc5",
+//         "app_id": "013f9e16",
+//     };
 
-    //Gets the main search weather an ingredient or a recipe
-    if (mainIngredientStorage) {
-        queryParams.q = mainIngredientStorage;
-    } else {
-        queryParams.q = recipeSearchStorage;
-    }
+//     //Gets the main search weather an ingredient or a recipe
+//     if (mainIngredientStorage) {
+//         queryParams.q = mainIngredientStorage;
+//     } else {
+//         queryParams.q = recipeSearchStorage;
+//     }
 
-    //return the newly created url to the AJAX call
-    return queryURL + $.param(queryParams)
-}
+//     //return the newly created url to the AJAX call
+//     return queryURL + $.param(queryParams)
+// }
 
 function renderRecipes(arrayOfOptions) {
     $("#foodLineupDisplay").empty()
@@ -68,7 +65,6 @@ function renderRecipes(arrayOfOptions) {
         recipeImage.addClass("activator")
         recipeImage.css("height", "300px")
         cardImgDiv.append(recipeImage)
-
         var cardRevealDiv = $("<div>")
         cardRevealDiv.addClass("card-reveal")
         cardDiv.append(cardRevealDiv)
@@ -80,7 +76,6 @@ function renderRecipes(arrayOfOptions) {
         var rowDiv = $("<div>")
         rowDiv.addClass("row")
         cardRevealDiv.append(rowDiv)
-
         var ingredientColDiv = $("<div>")
         ingredientColDiv.addClass("col s6")
         rowDiv.append(ingredientColDiv)
@@ -134,12 +129,10 @@ function renderRecipes(arrayOfOptions) {
 
     });
 }
+//             $.ajax({
+//                 url: queryURL,
+//                 method: "GET"
 
-function renderIngredients() {
-
-    list.text("")
-    for (var i = 0; i < ingredientsUsed.length; i++) {
-        var item = ingredientsUsed[i];
 
         var li = document.createElement("li");
         li.textContent = item;
@@ -147,6 +140,7 @@ function renderIngredients() {
         var buttonRemove = document.createElement("button")
         buttonRemove.className = "bttnSubmit waves-effect waves-light btn-small"
         buttonRemove.textContent = "remove"
+
         // var buttonRemove = $("<a>").text($("<i>").attr("class", "small material-icons"));
         // // var listIcon = $("<i>").attr("class", "small material-icons")
         // listIcon.text("cancel");
@@ -157,11 +151,20 @@ function renderIngredients() {
 
         // li.prepend(buttonRemove)
         // li.append(buttonRemove);
+
+
+//                 if (!mainIngredient) {
+//                     alert("Please enter something in the text box")
+//                 } else {
+
+
+        li.append(buttonRemove)
+
         list.append(li);
         list.append(buttonRemove);
     }
-
-}
+//                     renderIngredients()
+//                     localStorage.setItem("ingredientsUsed", ingredientsUsed)
 
 function initialURL() {
     $.ajax({
@@ -233,7 +236,7 @@ function customizedURL() {
     //return the newly created url to the AJAX call
     return queryURL + $.param(queryParams)
 }
-
+//             //     //Get the info from the home page local storage
 
 //Stores the first input from the home page based on a recipe search or ingredient search
 submitRecipe.on("click", function () {
@@ -290,7 +293,6 @@ submitIngredient.on("click", function () {
 
 list.on("click", function (event) {
     element = event.target
-
     if (element.matches("button")) {
         var index = element.parentElement.getAttribute("data-index");
         ingredientsUsed.splice(index, 1)
@@ -317,5 +319,6 @@ $("#filterButton").on("click", function () {
 
 
 // modal
-// $('.modal').modal();
+$('.modal').modal();
+
 
