@@ -1,9 +1,11 @@
+
 var numIngredients = $("#numIngredients");
 var ingredientDisplay = $("#indgredientDisplay");
 var submitRecipe = $("#submitRecipe");
 var submitIngredient = $("#submitIngredient");
 var ingredientsUsed = [];
 var list = $("#ingredientList");
+
 var listDisplay = true;
 
 //Build the URL based on input from the user
@@ -65,6 +67,7 @@ function renderRecipes(arrayOfOptions) {
         recipeImage.addClass("activator")
         recipeImage.css("height", "390px")
         cardImgDiv.append(recipeImage)
+
         var cardRevealDiv = $("<div>")
         cardRevealDiv.addClass("card-reveal reveal")
         cardDiv.append(cardRevealDiv)
@@ -86,6 +89,7 @@ function renderRecipes(arrayOfOptions) {
         var rowDiv = $("<div>")
         rowDiv.addClass("row")
         cardRevealDiv.append(rowDiv)
+
         var ingredientColDiv = $("<div>")
         ingredientColDiv.addClass("col 12")
         rowDiv.append(ingredientColDiv)
@@ -149,11 +153,14 @@ function renderRecipes(arrayOfOptions) {
 
     });
 }
+
 // $.ajax({
 //     url: queryURL,
 //     method: "GET"
 
 function renderIngredients() {
+
+
     list.text("")
     for (var i = 0; i < ingredientsUsed.length; i++) {
         var item = ingredientsUsed[i];
@@ -170,6 +177,8 @@ function renderIngredients() {
 
 
 
+
+
         // if (!mainIngredient) {
         //     alert("Please enter something in the text box")
         // } else {
@@ -180,6 +189,7 @@ function renderIngredients() {
         //                     localStorage.setItem("ingredientsUsed", ingredientsUsed)
 
     }
+
 }
 
 function initialURL() {
@@ -189,6 +199,36 @@ function initialURL() {
     }).then(response => {
         var item = response.hits
         renderRecipes(item)
+
+        if (localStorage.getItem("recipeSearch")) {
+
+
+            $.ajax({
+                url: "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + localStorage.getItem("recipeSearch") + "&order=rating&type=video&videoDefinition=high&videoEmbeddable=true&key=AIzaSyBzuZVaBsuTjM00D3jSNYjOL4U9kTmkbpo",
+                method: "GET"
+            }).then(response => {
+                console.log(response)
+                var videoID = response.items[0].id.videoId
+                var youtubeButton = $("<button>")
+                youtubeButton.text("Here")
+                youtubeButton.attr("src", "https://www.youtube.com/watch?v=" + videoID)
+                youtubeButton.addClass("bttnSubmit waves-effect waves-light btn-small")
+
+                var videoTitle = $("<p>").text("Check out a video for our favorite " + localStorage.getItem("recipeSearch") + " Recipe ")
+                videoTitle.append(youtubeButton)
+
+                var videoRow = $("#videoRow")
+                videoRow.addClass("row")
+                videoRow.append(videoTitle)
+
+
+
+                youtubeButton.on("click", function () {
+                    window.open($(this).attr("src"))
+                })
+
+            })
+        }
     })
 
 }
@@ -252,7 +292,7 @@ function customizedURL() {
     //return the newly created url to the AJAX call
     return queryURL + $.param(queryParams)
 }
-//             //     //Get the info from the home page local storage
+
 
 //Stores the first input from the home page based on a recipe search or ingredient search
 submitRecipe.on("click", function () {
@@ -277,6 +317,8 @@ submitRecipe.on("click", function () {
 })
 
 submitIngredient.on("click", function () {
+
+    localStorage.clear()
     var mainIngredient = $("#mainIngredient").val().trim();
 
 
@@ -309,8 +351,10 @@ submitIngredient.on("click", function () {
 
 list.on("click", function (event) {
     element = event.target
+
     console.log(element);
     if (element.matches("i")) {
+
         var index = element.parentElement.getAttribute("data-index");
         ingredientsUsed.splice(index, 1)
         localStorage.setItem("ingredientsUsed", ingredientsUsed)
@@ -335,5 +379,5 @@ $("#filterButton").on("click", function () {
 
 
 
-// // modal
-// $('.modal').modal();
+
+$(".modal").modal()
