@@ -144,9 +144,10 @@ function renderIngredients() {
         buttonRemove.className = "bttnSubmit waves-effect waves-light btn-small"
         buttonRemove.textContent = "remove"
 
-
         li.append(buttonRemove)
+
         list.append(li);
+        list.append(buttonRemove);
     }
 
 }
@@ -157,7 +158,6 @@ function initialURL() {
         method: "GET"
     }).then(response => {
         var item = response.hits
-
         renderRecipes(item)
 
         if (localStorage.getItem("recipeSearch")) {
