@@ -1,8 +1,11 @@
-var ingredientDisplay = $("#indgredientDisplay")
-var submitRecipe = $("#submitRecipe")
-var submitIngredient = $("#submitIngredient")
-var ingredientsUsed = []
-var list = $("#ingredientList")
+
+var numIngredients = $("#numIngredients");
+var ingredientDisplay = $("#indgredientDisplay");
+var submitRecipe = $("#submitRecipe");
+var submitIngredient = $("#submitIngredient");
+var ingredientsUsed = [];
+var list = $("#ingredientList");
+
 var listDisplay = true;
 
 //Build the URL based on input from the user
@@ -38,7 +41,7 @@ function renderRecipes(arrayOfOptions) {
     arrayOfOptions.forEach(element => {
 
         var colDiv = $("<div>").data("site", element.recipe.uri)
-        colDiv.addClass("col s12 m6 l4")
+        colDiv.addClass("col s12 m4 12")
         colDiv.append(cardDiv)
 
         //Append most the stuff to this
@@ -52,7 +55,7 @@ function renderRecipes(arrayOfOptions) {
 
         var cardContentDiv = $("<div>")
         cardContentDiv.addClass("card-content")
-        cardContentDiv.css("height", "100px")
+        cardContentDiv.css({ "height": "70px", "align-content": "middle" })
         cardDiv.append(cardContentDiv)
 
         var recipeTitle = $("<span>").text(element.recipe.label)
@@ -62,29 +65,40 @@ function renderRecipes(arrayOfOptions) {
         //Create all the different elements and put them in a div
         var recipeImage = $("<img>").attr("src", element.recipe.image)
         recipeImage.addClass("activator")
-        recipeImage.css("height", "300px")
+        recipeImage.css("height", "390px")
         cardImgDiv.append(recipeImage)
 
         var cardRevealDiv = $("<div>")
-        cardRevealDiv.addClass("card-reveal")
+        cardRevealDiv.addClass("card-reveal reveal")
         cardDiv.append(cardRevealDiv)
 
         var recipeTitleReveal = $("<span>").text(element.recipe.label)
         recipeTitleReveal.addClass("card-title grey-text text-darken-4")
         cardRevealDiv.append(recipeTitleReveal)
 
+        var seeRecipe = $("<div>")
+        seeRecipe.addClass("row see-recipe")
+        cardRevealDiv.append(seeRecipe)
+
+        var rowCal = $("<div>")
+        rowCal.addClass("row cal-time")
+        cardRevealDiv.append(rowCal)
+
+
+
         var rowDiv = $("<div>")
         rowDiv.addClass("row")
         cardRevealDiv.append(rowDiv)
 
         var ingredientColDiv = $("<div>")
-        ingredientColDiv.addClass("col s6")
+        ingredientColDiv.addClass("col 12")
         rowDiv.append(ingredientColDiv)
 
         var ingredientHeading = $("<h6>").text("Ingredients:")
         ingredientColDiv.append(ingredientHeading)
 
         var ingredientList = $("<ul>")
+        ingredientList.addClass("ingredientLi")
         ingredientColDiv.append(ingredientList)
 
         var ingredientLine = element.recipe.ingredientLines
@@ -94,8 +108,12 @@ function renderRecipes(arrayOfOptions) {
         });
 
         var timeColDiv = $("<div>")
-        ingredientColDiv.addClass("col s6")
-        rowDiv.append(timeColDiv)
+        timeColDiv.addClass("col 6")
+        rowCal.append(timeColDiv)
+
+        var calColDiv = $("<div>")
+        calColDiv.addClass("col 6")
+        rowCal.append(calColDiv)
 
         var cookTimeInt = parseInt(element.recipe.totalTime)
         if (cookTimeInt === 0) {
@@ -110,12 +128,17 @@ function renderRecipes(arrayOfOptions) {
         var numServe = parseInt(element.recipe.yield)
         var numCalories = calorieCount / numServe
 
-        var recipeLink = $("<button>").text("See Full Recipe")
-        recipeLink.attr("src", element.recipe.url)
+        var recipeLink = $("<button>").text("Full Recipe")
+        recipeLink.attr({"src": element.recipe.url, "id": "fullRecipe", "class": "bttnSubmit waves-effect waves-light btn-small"})
 
         var caloriesPerServe = $("<p>").text("Calories: " + numCalories.toFixed(0) + "cal/serving")
-        timeColDiv.append(cookTime, caloriesPerServe, recipeLink)
+        timeColDiv.append(cookTime);
+        calColDiv.append(caloriesPerServe);
+        seeRecipe.append(recipeLink);
 
+        var closeRecipe = $("<i>").attr("class", "close-recipe small material-icons");
+        closeRecipe.text("highlight_off");
+        cardRevealDiv.append(closeRecipe);
 
 
         //Have to append to a created div
@@ -131,23 +154,40 @@ function renderRecipes(arrayOfOptions) {
     });
 }
 
+// $.ajax({
+//     url: queryURL,
+//     method: "GET"
+
 function renderIngredients() {
+
 
     list.text("")
     for (var i = 0; i < ingredientsUsed.length; i++) {
         var item = ingredientsUsed[i];
 
+
+
         var li = document.createElement("li");
-        li.textContent = item;
-        li.setAttribute("data-index", i)
-        var buttonRemove = document.createElement("button")
-        buttonRemove.className = "bttnSubmit waves-effect waves-light btn-small"
-        buttonRemove.textContent = "remove"
+        li.textContent = "  " + item.charAt(0).toUpperCase() + item.slice(1);
+        li.setAttribute("data-index", i);
+        var listIcon = document.createElement("i")
+        listIcon.className = "tiny material-icons ingredIcon";
+        listIcon.textContent = "cancel";
 
-        li.append(buttonRemove)
 
+
+
+
+
+        // if (!mainIngredient) {
+        //     alert("Please enter something in the text box")
+        // } else {
         list.append(li);
-        list.append(buttonRemove);
+        li.prepend(listIcon);
+
+        //                     renderIngredients()
+        //                     localStorage.setItem("ingredientsUsed", ingredientsUsed)
+
     }
 
 }
@@ -312,7 +352,9 @@ submitIngredient.on("click", function () {
 list.on("click", function (event) {
     element = event.target
 
-    if (element.matches("button")) {
+    console.log(element);
+    if (element.matches("i")) {
+
         var index = element.parentElement.getAttribute("data-index");
         ingredientsUsed.splice(index, 1)
         localStorage.setItem("ingredientsUsed", ingredientsUsed)
@@ -335,5 +377,7 @@ $("#filterButton").on("click", function () {
 
 })
 
-// modal
+
+
+
 $(".modal").modal()
