@@ -1,28 +1,35 @@
-# Project1 - Recipe Site
+# Project1 - Pleasantly
 
-# Description
+## Description
+
+An online resource of food and cocktail recipes with the capability of searching by recipe name or specific ingredients. Additional filtering options such as cook time, caloric value, and allergies are available. As an added value, trending cooking videos are available to reference.
 
 ### This is an online resource for recipes with limited item in the user's home.
 
-### User Story
-### AS a hungry and budget conscious person I WANT recipes ideas from what I have at my home so I CAN save more money. Given I'm a general user WHEN I input my desired ingredients (1,3,5) then a recipe it's generated.
+## User Story
 
-### Apis
+As a user on the go, I want a reference of quick recipe ideas from what I have at my home so I can save more money. Given I'm a general user, when I input my desired ingredients, then a recipe is generated.
+
+## Apis
+
  * Edaman https://developer.edamam.com/
- * Spell check
+ * CocktailsDB
 
-### Technologies-Libraries
+## Technologies-Libraries
  
- * Bootstrap - CSS Framework
+ * Jquery - JavaScript Library 
 
- * Jquery - JavaScript Library
+   https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css
 
- * Moment.js - JavaScript Library
+ * Materialized 
 
- * OpenWeather - Weather API
+   https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css
 
-### Link
+ * Google Fonts 
+
+   https://fonts.googleapis.com/icon?family=Material+Icons
+
+## Link
 
 
 
-## Check it out! 
