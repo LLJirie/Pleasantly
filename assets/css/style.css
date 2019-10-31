@@ -6,6 +6,11 @@ body {
     background-image: url(../Images/ingredients.jpeg);
     background-size: cover;
   }
+  .headerDiv > a {
+    font-family: 'Leckerli One', cursive;
+    font-size: 60px;
+
+  } 
 
 .container {
   width: 85%;
