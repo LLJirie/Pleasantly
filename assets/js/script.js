@@ -159,6 +159,36 @@ function initialURL() {
     }).then(response => {
         var item = response.hits
         renderRecipes(item)
+
+        if (localStorage.getItem("recipeSearch")) {
+
+
+            $.ajax({
+                url: "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + localStorage.getItem("recipeSearch") + "&order=rating&type=video&videoDefinition=high&videoEmbeddable=true&key=AIzaSyBzuZVaBsuTjM00D3jSNYjOL4U9kTmkbpo",
+                method: "GET"
+            }).then(response => {
+                console.log(response)
+                var videoID = response.items[0].id.videoId
+                var youtubeButton = $("<button>")
+                youtubeButton.text("Here")
+                youtubeButton.attr("src", "https://www.youtube.com/watch?v=" + videoID)
+                youtubeButton.addClass("bttnSubmit waves-effect waves-light btn-small")
+
+                var videoTitle = $("<p>").text("Check out a video for our favorite " + localStorage.getItem("recipeSearch") + " Recipe ")
+                videoTitle.append(youtubeButton)
+
+                var videoRow = $("#videoRow")
+                videoRow.addClass("row")
+                videoRow.append(videoTitle)
+
+
+
+                youtubeButton.on("click", function () {
+                    window.open($(this).attr("src"))
+                })
+
+            })
+        }
     })
 
 }
@@ -247,6 +277,8 @@ submitRecipe.on("click", function () {
 })
 
 submitIngredient.on("click", function () {
+
+    localStorage.clear()
     var mainIngredient = $("#mainIngredient").val().trim();
 
 
