@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -35,10 +37,23 @@
     <main>
         <div class="container mainDiv">
             <div class="row">
-                <div class="col s12 col m6">
+                <div class="col s12 col m8" id="searchRow">
 
                     <div class="row">
                         <form class="col s12">
+                            <div class="row recipeSearchDiv">
+                                <div class="col s8">
+                                    <input placeholder="Recipe Search" id="recipeSearch" type="text">
+                                    <a id="submitRecipe"
+                                        class="bttnSubmit waves-effect waves-light btn-small">Submit</a>
+                                </div>
+                            </div>
+
+
+                            <div class="row ingredientsDiv">
+                                <div class="col s8">
+                                    <input placeholder="Search by Ingredient (Max 10)" id="mainIngredient" type="text">
+                                    <ul id="ingredientList">
 
                             <div class="row ">
                                 <div class="input-field col s12">
@@ -52,11 +67,21 @@
                                         <input placeholder="Search by Ingredients" id="mainIngredient" type="text">
                                         <a class="btn-floating waves-effect waves-light bttnSubmit ">
                                             <i id="submitIngredient" class="material-icons">+</i></a>
+
                                     </div>
 
 
 
+                                    </ul>
+                                    <a id="submitRecipe"
+                                        class="bttnSubmit waves-effect waves-light btn-small">Submit</a>
                                 </div>
+                                <div class="col s4" id="add-icon">
+                                    <i id="submitIngredient" class="small material-icons">add_circle_outline</i>
+                                </div>
+                                <!-- Modal Testing -->
+                                <button data-target="modal1" class="btn modal-trigger">Recipe Modal</button>
+                                <button data-target="modal2" class="btn modal-trigger">Sign-up Modal</button>
 
                             </div>
 
@@ -68,7 +93,7 @@
 
                 </div>
 
-                <div class="col" id="appendedContent">
+                <!-- <div class="col" id="appendedContent">
 
                     <ul id="ingredientList">
 
@@ -76,55 +101,120 @@
 
 
 
-                </div>
+                </div> -->
             </div>
     </main>
 
 
 
-    <!-- Modal Trigger -->
-    <button data-target="modal1" class="btn modal-trigger">Modal</button>
+
+
+
 
     <!-- Modal Structure -->
+
     <div id="modal1" class="modal">
 
         <div class="modal-content">
+
             <div class="row">
-                <div class="col s12">
-                    <h1>Chicken</h1>
+
+                <div class="grid-example col s12"><span class="flow-text">chicken</span>
+                    <!-- <h1>Chicken</h1> -->
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col s5 recipeImage">
+                    <img src="http://placehold.it/250x250" alt="Placeholder" class="img=thumbnail">
                 </div>
 
+
+                <div class="col s3">
+                    <h6 class="recipeHeader">Calories:</h6>
+                    <br>
+                    <h6 class="recipeHeader">Cooktime:</h6>
+                </div>
+
+                <div class="col s4">
+                    <h6 class="recipeHeader">Preptime:</h6>
+
+
+                </div>
             </div>
 
-            <div class="col">
-                <img src="http://placehold.it/150x150" alt="Placeholder" class="img=thumbnail">
-            </div>
         </div>
+        <div class="modal-footer">
+
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
 
 
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="grid-example col s12"><span class="flow-text">I am always full-width (col s12)</span></div>
             <div class="grid-example col s12 m6"><span class="flow-text">I am full-width on mobile (col s12 m6)</span>
             </div>
-        </div>
+        </div> -->
 
-        <div class="modal-footer">
+        <!-- <div class="modal-footer">
 
-            <!-- <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a> -->
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div> -->
+
         </div>
     </div>
-
-    <footer>
-        <div class="footer-copyright footerDiv">
-            <div class="container">
-                <p class="grey-text text-lighten-4 center">© 2014 Copyright </p>
-
-
+    <!-- sign-up modal -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="col s12">
+                            <h1>Welcome!</h1>
+                            <p>We are happy you are here! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                                consectetur atque a, nobis iusto vel totam. Maiores illo dolores modi voluptates
+                                perferendis facilis ullam placeat, magni doloremque aliquid porro unde.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                            <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                </form>
+                    
             </div>
 
         </div>
-    </footer>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Sign Up!</a>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <!-- <footer>
+        <div class="footer-copyright footerDiv">
+            <p class="grey-text text-lighten-4 center">© 2014 Copyright </p>
+        </div>
+    </footer> -->
 
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
