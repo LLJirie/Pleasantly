@@ -1,72 +1,81 @@
 
 body {
-     /* display: flex; */
-    min-height: 100vh;  
+    /* height: auto; */
+    height: 100vh;  
     font-family: 'Montserrat', sans-serif; 
-    /* background-image: url("/Project1/assets/css/bgpic1.jpeg") */
     background-image: url(../Images/ingredients.jpeg);
     background-size: cover;
   }
+
 .container {
-  width: 80%;
+  width: 85%;
+}
+
+p {
+  margin: 5px 5px;
 }
 
 h6 {
     font-weight: bold;
+    font-size: 20px;
   }
 
-/* main {
-    flex: 1 0 auto;
-  } */
+  h2 {
+    text-align: center;
+  }
 
 nav {
     background-color: #E85A4F;
 }
 
-.card {
-    /* width: 300px;
-    height: 300px; */
-    overflow: hidden;
+#nav-mobile > li > a {
+  font-size: 20px;
+  font-weight: bold;
 }
- /* ul {
-     font-weight: bold;
- } */
 
- .card-title {
-     text-align: center;
-     font-weight: bold;
- }
  footer {
      position: absolute;
      left: 0;
      right: 0;
      bottom: 0;
-     margin-bottom: 0;
+     margin-top: 40px;
  }
 
  div.footerDiv > p {
    margin-bottom: 0;
+   padding: 10px;
  }
+
+ .mainDiv {
+   background-color: rgba(234, 231, 220, 0.9);
+   margin-top: 20px;
+   /* margin-bottom: 40px; */
+   padding: 25px;
+   overflow: auto;
+   height: 85%;
+   overflow: -moz-scrollbars-none; 
+   -ms-overflow-style: none;
+ }
+
+
+ .mainDiv::-webkit-scrollbar { 
+   width: 0 !important; 
+  }
+
 
   .headerDiv {
       background-color: #d8c3a5
   }
 
-
   .recipeSearchDiv{
-      margin-top: 60px
-
-  }
-
-  .recipeSearchDiv, .ingredientsDiv {
-    /* position: relative; */
-
-margin-left: 15px;
+      margin-top: 60px;
+      padding-left: 0px;
   }
 
   .bttnSubmit {
 
     background-color:  #e85a4f ;
+    font-size: 20px;
  }
 
  .footerDiv {
@@ -75,22 +84,34 @@ margin-left: 15px;
     margin-bottom: 0px;
  }
   #searchRow {
-    background-color: rgba(234, 231, 220, 0.9);;
+    background-color: rgba(234, 231, 220, 0.9);
     border-radius: 5px;
-    margin-top: 20px;
-
-
-
+    margin-top: 75px;
   }
   
-  .row {
-   padding-left: 15px;
-    
+  
+  #recipeSearch, #mainIngredient, #excludedInput, #timeInput, #caloriesInput {
+    background-color: rgba(255, 255, 255, 0.5);
+    position: relative;
+  }
+  .ingredientsDiv {
+    position: relative;
   }
 
-  ::placeholder {
-    color: black;
-  }
+
+input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+  border-bottom: none;
+}
+
+input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 3px solid #e85a4f;
+  box-shadow: none;;
+}
+::placeholder {
+  color: rgb(44, 44, 44);
+  font-size: 20px;
+  padding-left: 10px;
+}
 
   #add-icon {
     align-content: center;
@@ -98,10 +119,34 @@ margin-left: 15px;
 
   #submitIngredient {
     color: #e85a4f;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    z-index: 5;
   }
 
+  #submitRecipe {
+    margin-top: px;
+  }
 
+  #fullRecipe {
+    margin: 0 35%;
+    font-size: 13px;
+  
+  }
 
+  .see-recipe {
+    margin-bottom: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .close-recipe {
+    position: absolute;
+  top: 0;
+  right: 5px;
+  color: #e85a4f
+  }
 
 .grid-example {
 
@@ -112,19 +157,79 @@ margin-left: 15px;
     font-size: 28px;
     background-color: #E85A4F;
     color: white;
-
-       padding: 0; 
+    padding: 0; 
 }
+
 .recipeHeader {
   font-size: 20px;
   background-color: #8E8D8A;
   color: white;
+}
+
+.ingredIcon {
+  vertical-align: middle;
+}
 
 
+img.activator {
+  overflow: hidden;
+  width: 100%;
 }
-.recipeImage {
-  overflow: auto;
+
+.card .card-reveal {
+ padding: 10px 10px;
+ 
+ 
 }
+
+.card-reveal {
+  position: relative;
+  
+
+}
+
+.card .card-content {
+  padding:  5px;
+  
+}
+
+.card-title {
+  text-align: center;
+  font-weight: bold;
+  padding: 0 20px;
+}
+
+
+
+.ingredientLi {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  list-style-position: inside;
+
+}
+.ingredientLi>li{
+  padding-left: 10px;
+}
+
+.ingredientLi > li::before {
+padding-left: 5px;
+}
+
+.ingredientLi:not(.browser-default)>li {
+  list-style-type: disc;
+
+}
+
+.cal-time {
+  margin-bottom: 5px;
+}
+
+label {
+  font-size: 20px;
+  color: black;
+}
+
 @media screen and (max-width: 760px) {
 }
  @media screen and (max-width: 480px){
