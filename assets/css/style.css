@@ -7,6 +7,11 @@ body {
     /* background-image: url("/Project1/assets/css/bgpic1.jpeg") */
     min-height: 100vh;
   }
+  .headerDiv > a {
+    font-family: 'Leckerli One', cursive;
+    font-size: 60px;
+
+  } 
 
 h6 {
     font-weight: bold;
