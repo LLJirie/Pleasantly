@@ -11,28 +11,25 @@ $("#bttnDrinkSearch").on("click", function drinkSearch(e) {
     divResults.empty()
 
 
-    var userInput = $("#drinkname").val();
+    var userInput = $("#drinkName").val();
     var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + userInput
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-
+        console.log(response);
+        var drinkInstr = response.drinks.instructions;
 
         //if response it's null a pop up shows up informing the user 
         var drinks = response.drinks;
         if (!drinks) {
-
             alert("#Opsi");
-
         }
 
         drinks.forEach(drink => {
 
             var drinkImage = $("<img>").attr("src", drink.strDrinkThumb);
-            drinkImage.css("height", "300px");
-
-
+            drinkImage.addClass("img-responsive activator");
 
 
             var colDiv = $("<div>");
@@ -41,7 +38,7 @@ $("#bttnDrinkSearch").on("click", function drinkSearch(e) {
 
             //Append most the stuff to this
             var cardImgDiv = $("<div>")
-            cardImgDiv.addClass("card-image waves-effect waves-block waves-light")
+            cardImgDiv.addClass("card-image waves-effect waves-block waves-light activator")
             cardImgDiv.append(drinkImage)
 
             var cardDiv = $("<div>")
@@ -50,7 +47,7 @@ $("#bttnDrinkSearch").on("click", function drinkSearch(e) {
 
             var cardContentDiv = $("<div>")
             cardContentDiv.addClass("card-content")
-            cardContentDiv.css("height", "100px")
+            cardContentDiv.css("height", "70px")
             cardDiv.append(cardContentDiv)
 
             var drinkTitle = $("<span>").text(drink.strDrink)
@@ -70,16 +67,11 @@ $("#bttnDrinkSearch").on("click", function drinkSearch(e) {
             cardRevealDiv.append(rowDiv)
 
             var ingredientColDiv = $("<div>")
-            ingredientColDiv.addClass("col s6")
+            ingredientColDiv.addClass("col s12")
             rowDiv.append(ingredientColDiv)
 
             var ingredientHeading = $("<h6>").text("Ingredients:")
             ingredientColDiv.append(ingredientHeading);
-
-
-
-
-
 
 
             for (let i = 1; i < 16; i++) {
@@ -87,53 +79,46 @@ $("#bttnDrinkSearch").on("click", function drinkSearch(e) {
                 const strMeasure = "strMeasure" + i;
 
 
-                if (drink[strIngredient]) {
+                if (drink[strIngredient] === null && drink[strMeasure] === null) {
+                    drInstructions();
+                    return;
+                } else if (drink[strIngredient] && drink[strMeasure] === null) {
                     var ingredient = drink[strIngredient];
+                    var measurement = "";
+                } else if (drink[strIngredient] === null && drink[strMeasure]) {
+                    var ingredient = "";
                     var measurement = drink[strMeasure];
-                    console.log(drink[strIngredient], drink[strMeasure]);
-
-
-                    var ingredientList = $("<ul>");
-                    ingredientColDiv.append(ingredientList);
-
-                    var listItem = $("<li>").text(drink[strIngredient])
-                    ingredientList.append(listItem);
-
-                    var itemMeas = $("<li>").text(drink[strMeasure]);
-                    ingredientList.append(itemMeas);
-
-
-
-                    divResults.append(colDiv.append(cardDiv))
-
-
+                } else if (drink[strIngredient] && drink[strMeasure]) {
+                    var measurement = drink[strMeasure];
+                    var ingredient = drink[strIngredient];
+                } else {
+                    console.log("its broken")
                 }
 
+                console.log(drink[strIngredient], drink[strMeasure]);
 
+
+                var ingredientList = $("<ul>");
+                ingredientList.addClass("drinkLi")
+                ingredientColDiv.append(ingredientList);
+
+                listItemMeasurement = measurement + ingredient;
+                var listItem = $("<li>").text(listItemMeasurement);
+                ingredientList.append(listItem);
+
+                divResults.append(colDiv.append(cardDiv));
 
             }
 
-            var instructions = $("<p>").text(drink.strInstructions);
-            ingredientList.append(instructions)
-            instructions.addClass("col s6")
-
-
-
-
-
-
-
-
-
+            drInstructions();
+            function drInstructions() {
+                var instructions = $("<p>").text(drink.strInstructions);
+                ingredientColDiv.append(instructions)
+                instructions.addClass("col s12")
+            }
         })
-
-
-
-
-
-
-
-
     })
 
 })
+
+
