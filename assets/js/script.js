@@ -41,7 +41,7 @@ function renderRecipes(arrayOfOptions) {
     arrayOfOptions.forEach(element => {
 
         var colDiv = $("<div>").data("site", element.recipe.uri)
-        colDiv.addClass("col s12 m4 12")
+        colDiv.addClass("col s12 col m4 ")
         colDiv.append(cardDiv)
 
         //Append most the stuff to this
@@ -65,7 +65,7 @@ function renderRecipes(arrayOfOptions) {
         //Create all the different elements and put them in a div
         var recipeImage = $("<img>").attr("src", element.recipe.image)
         recipeImage.addClass("activator")
-        recipeImage.css("height", "390px")
+        recipeImage.addClass("responsive-img")
         cardImgDiv.append(recipeImage)
 
         var cardRevealDiv = $("<div>")
