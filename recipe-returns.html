@@ -9,78 +9,122 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
-
-
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body onload="initialURL()">
-    <header>
-        <nav>
-            <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">SWEET NAME</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">Javascript</a></li>
-                </ul>
+
+    <nav>
+        <div class="nav-wrapper headerDiv">
+            <a href="#" class="brand-logo">Pleastanly Recipes </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href=index.html>Food</a></li>
+                <li><a href=#>Cocktails</a></li>
+                <li><a href=#>Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mainDiv">
+
+        <div class="row">
+            <div class="col m10 offset-m1">
+            <div class="col m4">
+                <input id="caloriesInput" type="text" placeholder="Max Number Of Calories">
+              
             </div>
-        </nav>
+            <div class="col m4">
+                <input id="timeInput" type="text" placeholder="Max Amount of Time">
+                
+            </div>
+            <div class="col m4">
+                <input id="excludedInput" type="text" placeholder="Allergies">
+                
+            </div>
+        </div>
+            <!-- <div class="col l2">
+                <select name="" id="cuisineTypeInput">
+                    <option value=""></option>
+                    <option value="American">American</option>
+                    <option value="Asian">Asian</option>
+                    <option value="British">British</option>
+                    <option value="Caribbean">Caribbean</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="French">French</option>
+                    <option value="Indian">Indian</option>
+                    <option value="italian">Italian</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Mexican">Mexican</option>
+                    <option value="South American">South American</option>
+                    <option value="Mediterranean">Mediterranean</option>
+                </select>
+            </div>
+            <div class="col l2">
+                <select name="" id="dietInput">
+                    <option value=""></option>
+                    <option value="balanced">Balanced</option>
+                    <option value="high-protein">High-Protein</option>
+                    <option value="low-fat">Low-Fat</option>
+                </select>
+            </div>
+            <div class="col l2">
+                <select name="" id="healthInput">
+                    <option value=""></option>
+                    <option value="alcohol-free">Alcohol-Free</option>
+                    <option value="dairy-free">Dairy-Free</option>
+                    <option value="egg-free">Egg-Free</option>
+                    <option value="fish-free">Fish-Free</option>
+                    <option value="gluten-free">Gluten-Free</option>
+                    <option value="low-potassium">Low-Potassium</option>
+                    <option value="low-sugar">Low-Sugar</option>
+                    <option value="peanut-free">Peanut-Free</option>
+                    <option value="sesame-free">Sesame-free</option>
+                    <option value="soy-free">Soy-Free</option>
+                    <option value="sugar-conscious">Sugar-Conscious</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="wheat-free">Wheat-Free</option>
+                </select>
+            </div> -->
+
+            <button class="bttnSubmit waves-effect waves-light btn-small" id="filterButton">Filter</button>
+
+   
+        </div>
+        <div class="container">
 
 
-        <ul class="sidenav" id="mobile-demo">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">Javascript</a></li>
-
-        </ul>
-    </header>
-    <div class="container">
+        <!-- <div class="container"> -->
         <div class="row">
 
-            <div class="row" id="foodLineupDisplay">
 
+                <div class="row" id="foodLineupDisplay">
+
+                </div>
             </div>
+
         </div>
-
-
+        <!-- </div> -->
     </div>
-    <footer class="page-footer">
-        <!-- <div class="container">
-              <div class="row">
-                <div class="col l6 s12">
-                  <h5 class="white-text">Footer Content</h5>
-                  <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                  <h5 class="white-text">Links</h5>
-                  <ul>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div> -->
-        <div class="footer-copyright">
-            <div class="container">
-                © 2014 Copyright Text
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
+
+    <!-- </div> -->
+    
+    <footer>
+        <div class="footer-copyright footerDiv">
+            <p class="grey-text text-lighten-4 center">© 2014 Copyright </p>
         </div>
     </footer>
-    <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- our js -->
     <script src="assets/js/script.js"></script>
+
+
 </body>
 
 </html>
