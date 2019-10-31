@@ -129,7 +129,7 @@ function renderRecipes(arrayOfOptions) {
         var numCalories = calorieCount / numServe
 
         var recipeLink = $("<button>").text("Full Recipe")
-        recipeLink.attr({"src": element.recipe.url, "id": "fullRecipe", "class": "bttnSubmit waves-effect waves-light btn-small"})
+        recipeLink.attr({ "src": element.recipe.url, "id": "fullRecipe", "class": "bttnSubmit waves-effect waves-light btn-small" })
 
         var caloriesPerServe = $("<p>").text("Calories: " + numCalories.toFixed(0) + "cal/serving")
         timeColDiv.append(cookTime);
@@ -154,18 +154,12 @@ function renderRecipes(arrayOfOptions) {
     });
 }
 
-// $.ajax({
-//     url: queryURL,
-//     method: "GET"
-
 function renderIngredients() {
 
 
     list.text("")
     for (var i = 0; i < ingredientsUsed.length; i++) {
         var item = ingredientsUsed[i];
-
-
 
         var li = document.createElement("li");
         li.textContent = "  " + item.charAt(0).toUpperCase() + item.slice(1);
@@ -174,20 +168,8 @@ function renderIngredients() {
         listIcon.className = "tiny material-icons ingredIcon";
         listIcon.textContent = "cancel";
 
-
-
-
-
-
-        // if (!mainIngredient) {
-        //     alert("Please enter something in the text box")
-        // } else {
         list.append(li);
         li.prepend(listIcon);
-
-        //                     renderIngredients()
-        //                     localStorage.setItem("ingredientsUsed", ingredientsUsed)
-
     }
 
 }
@@ -297,6 +279,7 @@ function customizedURL() {
 //Stores the first input from the home page based on a recipe search or ingredient search
 submitRecipe.on("click", function () {
 
+    list.css("display", "inline")
     //Clear the local storage to set new values
     localStorage.clear()
 
