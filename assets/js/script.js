@@ -360,7 +360,7 @@ var interval = setInterval(function () {
     $('.carousel').carousel('next');
 }, 6000);
 
-$(".carousel").on("click", function (event) {
+$(".carousel").on("click", function () {
 
     if (clickListner) {
         clearInterval(interval)
