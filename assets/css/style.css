@@ -1,11 +1,19 @@
-
+html{
+  min-height: 100%;
+  position: relative;
+}
 body {
     /* height: auto; */
-    height: 100vh;  
+    height: auto;  
     font-family: 'Montserrat', sans-serif; 
     background-image: url(../Images/ingredients.jpeg);
     background-size: cover;
   }
+  .headerDiv > a {
+    font-family: 'Leckerli One', cursive;
+    font-size: 60px;
+
+  } 
 
 .aboutUs{
 
@@ -256,25 +264,9 @@ label {
   color: black;
 }
 
-
 .searchRow{
  display: flex;
  flex-direction: row;
-
-
-}
-
-@media screen and (max-width: 800px) {
-
-  input::placeholder { /* Chrome/Opera/Safari */
-    font-size: 15px;
-  }
-
-
-@media screen and (max-width: 760px) {
-.container{
-  width: 100%;
-  
 }
 
 input::placeholder { /* Chrome/Opera/Safari */
@@ -294,18 +286,51 @@ input::placeholder { /* Chrome/Opera/Safari */
 /* #filterButton {
   margin-left: 25px;
 } */
+
+.carousel-item{
+  border-radius:0 0 5px 5px;
+  background-color: rgba(234, 231, 220, 0.9);
+}
+.spacer{
+  height: 50px;
+}
+iframe{
+  margin-top: 20px;
+}
+.editor{
+  background-color: rgba(234, 231, 220, 0.9);
+  margin-bottom: 0;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+}
+@media screen and (max-width: 760px) {
+  iframe{
+    width: 400px
+  }
+
 }
  @media screen and (max-width: 480px){
+
 
   .searchRow{
 
     display: flex;
     flex-direction: column;
   }
-
-  
-
-
- }
-
 }
+  @media screen and (max-width: 800px) {
+   
+
+  input::placeholder { /* Chrome/Opera/Safari */
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+.container{
+  width: 100%;
+  
+}
+}
+
