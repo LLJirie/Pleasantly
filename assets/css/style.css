@@ -7,6 +7,14 @@ body {
     background-size: cover;
   }
 
+  .background {
+    background-image: url(../Images/cocktails.jpeg);
+    background-size: cover;
+    height: 100vh;  
+    overflow: auto;
+
+  }
+
 .container {
   width: 85%;
 }
@@ -72,6 +80,11 @@ nav {
       padding-left: 0px;
   }
 
+  .drinkSearchDiv {
+    display: flex;
+    flex-direction: row;
+  }
+
   .bttnSubmit {
 
     background-color:  #e85a4f ;
@@ -90,7 +103,7 @@ nav {
   }
   
   
-  #recipeSearch, #mainIngredient, #excludedInput, #timeInput, #caloriesInput {
+  #recipeSearch, #mainIngredient, #excludedInput, #timeInput, #caloriesInput, #drinkName {
     background-color: rgba(255, 255, 255, 0.5);
     position: relative;
   }
@@ -201,7 +214,7 @@ img.activator {
 
 
 
-.ingredientLi {
+.ingredientLi, .drinkLi {
   columns: 2;
   -webkit-columns: 2;
   -moz-columns: 2;
