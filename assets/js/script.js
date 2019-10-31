@@ -1,8 +1,8 @@
-
 var numIngredients = $("#numIngredients");
 var ingredientDisplay = $("#indgredientDisplay");
 var submitRecipe = $("#submitRecipe");
 var submitIngredient = $("#submitIngredient");
+var submitIngredientButton = $("#submitIngredientButton")
 var ingredientsUsed = [];
 var list = $("#ingredientList");
 
@@ -171,7 +171,6 @@ function renderIngredients() {
         list.append(li);
         li.prepend(listIcon);
     }
-
 }
 
 function initialURL() {
@@ -183,7 +182,6 @@ function initialURL() {
         renderRecipes(item)
 
         if (localStorage.getItem("recipeSearch")) {
-
 
             $.ajax({
                 url: "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + localStorage.getItem("recipeSearch") + "&order=rating&type=video&videoDefinition=high&videoEmbeddable=true&key=AIzaSyBzuZVaBsuTjM00D3jSNYjOL4U9kTmkbpo",
@@ -275,7 +273,6 @@ function customizedURL() {
     return queryURL + $.param(queryParams)
 }
 
-
 //Stores the first input from the home page based on a recipe search or ingredient search
 submitRecipe.on("click", function () {
 
@@ -299,25 +296,17 @@ submitRecipe.on("click", function () {
 
 })
 
+submitIngredientButton.on("click", function () {
+    window.location.href = 'recipe-returns.html';
+    console.log("clcik")
+})
+
 submitIngredient.on("click", function () {
+
+    list.css("display", "unset")
 
     localStorage.clear()
     var mainIngredient = $("#mainIngredient").val().trim();
-
-
-    if (listDisplay) {
-        var submitButton = $("<button>")
-        submitButton.addClass("bttnSubmit waves-effect waves-light btn-small")
-        submitButton.text("Search")
-        $("#appendedContent").append(submitButton)
-
-        listDisplay = false
-        submitButton.on("click", function () {
-            window.location.href = 'recipe-returns.html';
-
-        })
-
-    }
 
     if (!mainIngredient) {
         alert("Please enter something in the text box")
@@ -345,7 +334,6 @@ list.on("click", function (event) {
     renderIngredients()
 })
 
-
 $("#filterButton").on("click", function () {
 
     $.ajax({
@@ -355,12 +343,33 @@ $("#filterButton").on("click", function () {
         var item = response.hits
 
         renderRecipes(item)
-
     })
 
 })
 
-
-
-
 $(".modal").modal()
+
+var clickListner = true
+
+$('.carousel.carousel-slider').carousel({
+    duration: 600,
+    indicators: true,
+    fullWidth: true
+});
+var interval = setInterval(function () {
+    $('.carousel').carousel('next');
+}, 6000);
+
+$(".carousel").on("click", function (event) {
+
+    if (clickListner) {
+        clearInterval(interval)
+        clickListner = false
+    } else {
+        $(".carousel").carousel("next")
+        interval = setInterval(function () {
+            $('.carousel').carousel('next');
+        }, 6000);
+        clickListner = true;
+    }
+})
