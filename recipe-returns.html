@@ -19,31 +19,42 @@
 
     <nav>
         <div class="nav-wrapper headerDiv">
-            <a href="#" class="brand-logo">Pleastanly Recipes </a>
+            <a href="#" class="brand-logo ourLogo">Pleasantly Recipes </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href=index.html>Food</a></li>
-                <li><a href=#>Cocktails</a></li>
+                <li><a href=recipe-returns.html>Cocktails</a></li>
                 <li><a href=#>Contact Us</a></li>
             </ul>
         </div>
     </nav>
     <div class="container mainDiv">
 
-        <div class="row">
-            <div class="col m10 offset-m1">
-            <div class="col m4">
+        <div class="row searchRow">
+            <!-- <div class="col m10  cols12 offset-m1"> CIbelle touched it-->
+
+            <div class="col m4 col s12">
                 <input id="caloriesInput" type="text" placeholder="Max Number Of Calories">
-              
+
             </div>
-            <div class="col m4">
+
+            <div class="col m4 col s12">
                 <input id="timeInput" type="text" placeholder="Max Amount of Time">
-                
+
             </div>
-            <div class="col m4">
+
+            <div class="col m4 col s12">
                 <input id="excludedInput" type="text" placeholder="Allergies">
-                
+
             </div>
-        </div>
+
+            <div class="col">
+                <button class="bttnSubmit waves-effect waves-light btn-small" id="filterButton">Filter</button>
+
+            </div>
+
+
+
+            <!-- </div> -->
             <!-- <div class="col l2">
                 <select name="" id="cuisineTypeInput">
                     <option value=""></option>
@@ -89,15 +100,17 @@
                 </select>
             </div> -->
 
-            <button class="bttnSubmit waves-effect waves-light btn-small" id="filterButton">Filter</button>
+            <!-- <button class="bttnSubmit waves-effect waves-light btn-small" id="filterButton">Filter</button> cibelle touched it -->
 
-   
+
         </div>
-        <div class="container">
+
+        <div class="col s12 col m6 " id="opacityDiv">
 
 
-        <!-- <div class="container"> -->
-        <div class="row">
+
+            <!-- <div class="container"> -->
+            <div class="row">
 
 
                 <div class="row" id="foodLineupDisplay">
@@ -110,10 +123,10 @@
     </div>
 
     <!-- </div> -->
-    
+
     <footer>
         <div class="footer-copyright footerDiv">
-            <p class="grey-text text-lighten-4 center">© 2014 Copyright </p>
+            <p class="grey-text text-lighten-4 center">© 2019 Copyright </p>
         </div>
     </footer>
 

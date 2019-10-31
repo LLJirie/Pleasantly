@@ -9,6 +9,31 @@ body {
     background-image: url(../Images/ingredients.jpeg);
     background-size: cover;
   }
+  .headerDiv > a {
+    font-family: 'Leckerli One', cursive;
+    font-size: 60px;
+
+  } 
+
+.aboutUs{
+
+  background-image: url(../Images/about_us.jpeg);
+  /* background-size: cover; */
+  height: 100vh;
+  background-size: cover; 
+  
+ 
+  
+}
+
+
+  .background {
+    background-image: url(../Images/cocktails.jpeg);
+    background-size: cover;
+    height: 100vh;  
+    overflow: auto;
+
+  }
 
 .container {
   width: 85%;
@@ -37,11 +62,11 @@ nav {
 }
 
  footer {
-     position: absolute;
-     left: 0;
-     right: 0;
-     bottom: 0;
-     margin-top: 40px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: 40px;
  }
 
  div.footerDiv > p {
@@ -52,12 +77,23 @@ nav {
  .mainDiv {
    background-color: rgba(234, 231, 220, 0.9);
    margin-top: 20px;
-   /* margin-bottom: 40px; */
+  
    padding: 25px;
    overflow: auto;
    height: 85%;
    overflow: -moz-scrollbars-none; 
    -ms-overflow-style: none;
+ }
+
+ .aboutUsDiv {
+
+  background-color: rgba(234, 231, 220, 0.9);
+  margin-top: 20px;
+  padding: 25px;
+   overflow: auto;
+   height: auto;
+   -ms-overflow-style: none;
+ 
  }
 
 
@@ -75,6 +111,11 @@ nav {
       padding-left: 0px;
   }
 
+  .drinkSearchDiv {
+    display: flex;
+    flex-direction: row;
+  }
+
   .bttnSubmit {
 
     background-color:  #e85a4f ;
@@ -83,7 +124,7 @@ nav {
 
  .footerDiv {
     background-color: #d8c3a5;
-
+    
     margin-bottom: 0px;
  }
   #searchRow {
@@ -93,7 +134,7 @@ nav {
   }
   
   
-  #recipeSearch, #mainIngredient, #excludedInput, #timeInput, #caloriesInput {
+  #recipeSearch, #mainIngredient, #excludedInput, #timeInput, #caloriesInput, #drinkName {
     background-color: rgba(255, 255, 255, 0.5);
     position: relative;
   }
@@ -101,6 +142,9 @@ nav {
     position: relative;
   }
 
+
+
+ 
 
 input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
   border-bottom: none;
@@ -204,7 +248,7 @@ img.activator {
 
 
 
-.ingredientLi {
+.ingredientLi, .drinkLi {
   columns: 2;
   -webkit-columns: 2;
   -moz-columns: 2;
@@ -232,6 +276,30 @@ label {
   font-size: 20px;
   color: black;
 }
+
+.searchRow{
+ display: flex;
+ flex-direction: row;
+}
+
+input::placeholder { /* Chrome/Opera/Safari */
+  font-size: 15px;
+}
+
+.headerDiv {
+  font-size: 20px;
+}
+
+.ourLogo{
+
+  font-size: 20px !important; 
+
+}
+
+/* #filterButton {
+  margin-left: 25px;
+} */
+
 .carousel-item{
   border-radius:0 0 5px 5px;
   background-color: rgba(234, 231, 220, 0.9);
@@ -253,7 +321,29 @@ iframe{
   iframe{
     width: 400px
   }
+
 }
  @media screen and (max-width: 480px){
- }
+
+
+  .searchRow{
+
+    display: flex;
+    flex-direction: column;
+  }
+}
+  @media screen and (max-width: 800px) {
+   
+
+  input::placeholder { /* Chrome/Opera/Safari */
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+.container{
+  width: 100%;
+  
+}
+}
 
