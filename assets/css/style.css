@@ -299,7 +299,22 @@ input::placeholder { /* Chrome/Opera/Safari */
 /* #filterButton {
   margin-left: 25px;
 } */
-
+.carousel{
+  position: relative;
+}
+.floatingButtonLeft{
+  position: absolute;
+  left: 5%;
+  top: 40%;
+}
+.floatingButtonRight{
+  position: absolute;
+  right: 5%;
+  top: 40%;
+}
+.arrow{
+  font-size: 40px;
+}
 .carousel-item{
   border-radius:0 0 5px 5px;
   background-color: rgba(234, 231, 220, 0.9);
