@@ -215,7 +215,8 @@ function searchRecipe() {
         window.location.href = 'recipe-returns.html';
 
     } else {
-        alert("Please enter a recipe or an ingredient to search for")
+        $("#modal1").modal("open")
+
     }
 
 }
@@ -267,7 +268,7 @@ function addToList() {
     var mainIngredient = $("#mainIngredient").val().trim();
 
     if (!mainIngredient) {
-        alert("Please enter an ingredient in the text box")
+        $("#modal3").modal("open")
     } else {
 
         ingredientsUsed.push(mainIngredient)
@@ -293,9 +294,8 @@ submitIngredientButton.on("click", function () {
     if (localStorage.getItem("ingredientsUsed")) {
         window.location.href = 'recipe-returns.html';
     } else {
-        alert("Please Enter Some Ingredients")
+        $("#modal3").modal("open")
     }
-
 })
 
 mainIngredientInput.on('keypress', function (e) {
