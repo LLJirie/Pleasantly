@@ -134,7 +134,7 @@ function renderRecipes(arrayOfOptions) {
 
         var closeRecipe = $("<i>").attr("class", "close-recipe small material-icons");
         closeRecipe.text("highlight_off");
-        cardRevealDiv.append(closeRecipe);
+        recipeTitleReveal.append(closeRecipe);
 
         //Have to append to a created div
         $("#foodLineupDisplay").append(colDiv.append(cardDiv))
