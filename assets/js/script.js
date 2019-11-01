@@ -1,7 +1,17 @@
-$(document).ready(function(){
+
+
+
+$(document).ready(function () {
     $('.sidenav').sidenav();
-  });
-        
+    if (!localStorage.getItem("visited")) {
+        setTimeout(() => {
+            $("#modal2").modal("open")
+            localStorage.setItem("visited", true)
+        }, 2500);
+    }
+
+});
+
 
 var numIngredients = $("#numIngredients");
 var ingredientDisplay = $("#indgredientDisplay");
