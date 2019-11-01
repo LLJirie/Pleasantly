@@ -148,17 +148,45 @@ nav {
     
   }
 
-  .bttnSubmit {
+  .bttnSubmit  {
 
-    background-color:  #e85a4f ;
+    background-color:  #e85a4f;
     font-size: 20px;
+    
  }
+
+ .modalBttn {
+
+  font-size: 15px;
+  background-color:  #e85a4f;
+  color: white;
+ }
+
+ .modalbg {
+   background-color:  rgba(234, 231, 220, 0.6);
+ }
+
+#modal2 {
+
+background-color: #d8c3a5;  
+
+}
+.modal-footer{
+
+  background-color: #d8c3a5 !important;
+
+}
+
+.modal2 {
+  color: white;
+}
 
  .footerDiv {
-    background-color: #d8c3a5;
-    
+    background-color: #d8c3a5;    
     margin-bottom: 0px;
  }
+
+
   #searchRow {
     background-color: rgba(234, 231, 220, 0.9);
     border-radius: 5px;
