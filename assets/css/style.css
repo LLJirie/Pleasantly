@@ -84,7 +84,7 @@ body {
   font-size: 15px;
 
 
-
+}
   .background {
 
     background-image: url(../Images/cocktails.jpeg);
@@ -149,7 +149,7 @@ h3 {
    -ms-overflow-style: none;
  }
 
-
+#foodLineupDisplay{
   background-color: rgba(234, 231, 220, 0.9);
   margin-top: 20px;
   padding: 25px;
