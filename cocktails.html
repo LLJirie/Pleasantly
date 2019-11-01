@@ -8,63 +8,61 @@
 
     <!-- Compiled and minified CSS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Leckerli+One|Montserrat|Amaranth|Carter+One|Sansita&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <title>Cocktails</title>
+    <title>Cocktail Recipes</title>
 </head>
 
 <body>
     <div class="background">
         <!-- Header -->
         <nav>
-            <div class="nav-wrapper headerDiv">
-                <a href="#" class="brand-logo">Im hungry! </a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href=index.html>Food Recipes</a></li>
-                    <li><a href=cocktails.html>Cocktail Recipes</a></li>
-                    <li><a href=#>Contact Us</a></li>
-                </ul>
-            </div>
-        </nav>
+                <div class="nav-wrapper headerDiv">
+                    <a href="#" class="brand-logo">Pleasantly</a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href=index.html>Food Recipes</a></li>
+                        <li><a href=cocktails.html>Cocktail Recipes</a></li>
+                        <li><a href=aboutus.html>About Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <ul class="sidenav" id="mobile-demo">
+                <li><a href=index.html>Food Recipes</a></li>
+                <li><a href=cocktails.html>Cocktail Recipes</a></li>
+                <li><a href=aboutus.html>About Us</a></li>
+            </ul>
 
         <!-- main body -->
         <div class="container">
+            <!-- <search box -->
             <div class="row">
                 <div class="col s12 col m12" id="searchRow">
                     <h2>Let's Make Cocktails!</h2>
-                    <!-- <div class="row"> -->
                     <form class="col s12">
                         <div class="row ">
-                            <div class="col s6 offset-s3 drinkSearchDiv">
-
+                            <div class="col s12 m6 offset-m3 drinkSearchDiv">
                                 <input placeholder="Recipe Name" id="drinkName" type="text">
-                                <a id="bttnDrinkSearch" class="bttnSubmit waves-effect waves-light btn-small">Search</a>
+                                <a id="bttnDrinkSearch" class="bttnSubmit waves-effect waves-light btn-medium">Search</a>
                             </div>
-
                         </div>
+                        <!-- results will be apendeded here   -->
                         <div id="resultsDiv">
-
-                            <!-- results will be apendeded here   -->
                         </div>
-
                     </form>
-
-                    <!-- </div> -->
                 </div>
             </div>
-            <!-- </main> -->
         </div>
 
 
     </div>
-    <!-- <footer>
+    <footer>
         <div class="footer-copyright footerDiv">
             <p class="grey-text text-lighten-4 center">© 2014 Copyright </p>
         </div>
-    </footer> -->
+    </footer>
 
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -72,9 +70,11 @@
     <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- our js -->
-
-
-    <script src="assets/js/cocktails.js"></script>
+    <script src="assets/js/cocktails.js">
+          document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, options);
+  });</script>
 </body>
 
 </html>
