@@ -1,7 +1,11 @@
-$(document).ready(function(){
+$(document).ready(function () {
     $('.sidenav').sidenav();
-  });
-        
+    setTimeout(() => {
+        $("#modal2").modal("open")
+    }, 2500);
+
+});
+
 
 var numIngredients = $("#numIngredients");
 var ingredientDisplay = $("#indgredientDisplay");
