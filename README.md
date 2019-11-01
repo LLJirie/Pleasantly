@@ -2,18 +2,18 @@
 
 ## Description
 
-An online resource of food and cocktail recipes with the capability of searching by recipe name or specific ingredients. Additional filtering options such as cook time, caloric value, and allergies are available. As an added value, trending cooking videos are available to reference.
+Pleasantly is an online resource of food and cocktail recipes with the capability of searching by recipe name or specific ingredients. Additional filtering options such as cook time, caloric value, and allergies are available. As an added value, trending cooking videos are available to reference.
 
 ### This is an online resource for recipes with limited item in the user's home.
 
 ## User Story
 
-As a user on the go, I want a reference of quick recipe ideas from what I have at my home so I can save more money. Given I'm a general user, when I input my desired ingredients, then a recipe is generated.
+AS a user on the go, I WANT t a reference of quick recipe ideas from what I have at my home SO I CAN save more money. Given I'm a general user, when I input my desired ingredients, then a recipe is generated.
 
 ## Apis
 
  * Edaman https://developer.edamam.com/
- * CocktailsDB
+ * The Cocktail DB http://thecocktaildb.com/
 
 ## Technologies-Libraries
  
@@ -21,13 +21,17 @@ As a user on the go, I want a reference of quick recipe ideas from what I have a
 
    https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css
 
- * Materialized 
+ * Materialize
 
    https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css
 
  * Google Fonts 
 
    https://fonts.googleapis.com/icon?family=Material+Icons
+   
+ * Font Awesome 
+ 
+   https://fontawesome.com/
 
 ## Link
 
