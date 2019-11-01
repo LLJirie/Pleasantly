@@ -8,6 +8,7 @@ var ingredientDisplay = $("#indgredientDisplay");
 var submitRecipe = $("#submitRecipe");
 var submitIngredient = $("#submitIngredient");
 var submitIngredientButton = $("#submitIngredientButton")
+var mainIngredientInput = $("#mainIngredient")
 var ingredientsUsed = [];
 var list = $("#ingredientList");
 
@@ -17,7 +18,6 @@ var listDisplay = true;
 function buildQueryURL() {
 
     //Get the info from the home page local storage
-    console.log(ingredientsUsed)
     var mainIngredientStorage = localStorage.getItem("ingredientsUsed")
     var recipeSearchStorage = localStorage.getItem("recipeSearch");
 
@@ -37,7 +37,7 @@ function buildQueryURL() {
     }
 
     //return the newly created url to the AJAX call
-    return queryURL + $.param(queryParams)
+    return queryURL + $.param(queryParams) + "&to=18"
 }
 
 function renderRecipes(arrayOfOptions) {
@@ -89,8 +89,6 @@ function renderRecipes(arrayOfOptions) {
         rowCal.addClass("row cal-time")
         cardRevealDiv.append(rowCal)
 
-
-
         var rowDiv = $("<div>")
         rowDiv.addClass("row")
         cardRevealDiv.append(rowDiv)
@@ -123,11 +121,9 @@ function renderRecipes(arrayOfOptions) {
         var cookTimeInt = parseInt(element.recipe.totalTime)
         if (cookTimeInt === 0) {
             cookTimeInt = "Unknown"
-        }
-        else {
+        } else {
             cookTimeInt = cookTimeInt + " min"
         }
-
         var cookTime = $("<p>").text("Cook Time: " + cookTimeInt)
         var calorieCount = parseInt(element.recipe.calories.toFixed(0))
         var numServe = parseInt(element.recipe.yield)
@@ -145,22 +141,17 @@ function renderRecipes(arrayOfOptions) {
         closeRecipe.text("highlight_off");
         cardRevealDiv.append(closeRecipe);
 
-
         //Have to append to a created div
-
         $("#foodLineupDisplay").append(colDiv.append(cardDiv))
-
 
         //open a new window on click
         recipeLink.on("click", function () {
             window.open($(this).attr("src"))
         })
-
     });
 }
 
 function renderIngredients() {
-
 
     list.text("")
     for (var i = 0; i < ingredientsUsed.length; i++) {
@@ -192,7 +183,6 @@ function initialURL() {
                 url: "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + localStorage.getItem("recipeSearch") + "&order=rating&type=video&videoDefinition=high&videoEmbeddable=true&key=AIzaSyBzuZVaBsuTjM00D3jSNYjOL4U9kTmkbpo",
                 method: "GET"
             }).then(response => {
-                console.log(response)
                 var videoID = response.items[0].id.videoId
                 var youtubeButton = $("<button>")
                 youtubeButton.text("Here")
@@ -206,8 +196,6 @@ function initialURL() {
                 videoRow.addClass("row")
                 videoRow.append(videoTitle)
 
-
-
                 youtubeButton.on("click", function () {
                     window.open($(this).attr("src"))
                 })
@@ -217,15 +205,30 @@ function initialURL() {
     })
 
 }
+function searchRecipe() {
+
+    list.css("display", "inline")
+    //Clear the local storage to set new values
+    localStorage.clear()
+
+    var recipeSearch = $("#recipeSearch").val().trim();
+
+    if (recipeSearch) {
+        localStorage.setItem("recipeSearch", recipeSearch)
+        $("#recipeSearch").val("")
+
+        window.location.href = 'recipe-returns.html';
+
+    } else {
+        alert("Please enter a recipe or an ingredient to search for")
+    }
+
+}
 
 function customizedURL() {
     var mainIngredientStorage = localStorage.getItem("ingredientsUsed")
     var recipeSearchStorage = localStorage.getItem("recipeSearch");
 
-    var dietInput = $("#dietInput").val();
-    var healthInput = $("#healthInput").val();
-    var cuisineTypeInput = $("#cuisineTypeInput").val();
-    var mealTypeInput = $("#mealTypeInput").val();
     var caloriesInput = $("#caloriesInput").val().trim();
     var timeInput = $("#timeInput").val().trim();
     var excludedInput = $("#excludedInput").val().trim();
@@ -245,22 +248,6 @@ function customizedURL() {
         queryParams.q = recipeSearchStorage;
     }
 
-    if (dietInput) {
-        //Input of what they want for there diet
-        queryParams.diet = dietInput;
-    }
-    if (healthInput) {
-        //Find vegan vegetarian stuff
-        queryParams.health = healthInput;
-    }
-    if (cuisineTypeInput) {
-        //Type of food
-        queryParams.cuisineType = cuisineTypeInput;
-    }
-    if (mealTypeInput) {
-        //breakfast lunch etc...
-        queryParams.mealType = mealTypeInput;
-    }
     if (caloriesInput) {
         //Number of max calories in a dish
         queryParams.calories = caloriesInput;
@@ -275,38 +262,9 @@ function customizedURL() {
     }
 
     //return the newly created url to the AJAX call
-    return queryURL + $.param(queryParams)
+    return queryURL + $.param(queryParams) + "&to=18"
 }
-
-//Stores the first input from the home page based on a recipe search or ingredient search
-submitRecipe.on("click", function () {
-
-    list.css("display", "inline")
-    //Clear the local storage to set new values
-    localStorage.clear()
-
-    var recipeSearch = $("#recipeSearch").val().trim();
-
-    if (recipeSearch) {
-        localStorage.setItem("recipeSearch", recipeSearch)
-        $("#recipeSearch").val("")
-
-        window.location.href = 'recipe-returns.html';
-
-
-    } else {
-        alert("Please enter a recipe or an ingredient to search for")
-    }
-
-
-})
-
-submitIngredientButton.on("click", function () {
-    window.location.href = 'recipe-returns.html';
-    console.log("clcik")
-})
-
-submitIngredient.on("click", function () {
+function addToList() {
 
     list.css("display", "unset")
 
@@ -314,7 +272,7 @@ submitIngredient.on("click", function () {
     var mainIngredient = $("#mainIngredient").val().trim();
 
     if (!mainIngredient) {
-        alert("Please enter something in the text box")
+        alert("Please enter an ingredient in the text box")
     } else {
 
         ingredientsUsed.push(mainIngredient)
@@ -324,6 +282,35 @@ submitIngredient.on("click", function () {
         localStorage.setItem("ingredientsUsed", ingredientsUsed)
 
     }
+}
+
+//Stores the first input from the home page based on a recipe search or ingredient search
+submitRecipe.on("click", function () {
+    searchRecipe()
+})
+$("#recipeSearch").on('keypress', function (e) {
+    if (e.key === 'Enter') {
+        searchRecipe()
+    }
+});
+
+submitIngredientButton.on("click", function () {
+    if (localStorage.getItem("ingredientsUsed")) {
+        window.location.href = 'recipe-returns.html';
+    } else {
+        alert("Please Enter Some Ingredients")
+    }
+
+})
+
+mainIngredientInput.on('keypress', function (e) {
+    if (e.key === 'Enter') {
+        addToList()
+    }
+});
+
+submitIngredient.on("click", function () {
+    addToList()
 })
 
 list.on("click", function (event) {
@@ -354,28 +341,32 @@ $("#filterButton").on("click", function () {
 
 $(".modal").modal()
 
-var clickListner = true
-
 $('.carousel.carousel-slider').carousel({
     duration: 600,
     indicators: true,
     fullWidth: true
 });
+
 var interval = setInterval(function () {
     $('.carousel').carousel('next');
 }, 6000);
+$(".carousel").on("mouseleave", function () {
 
-$(".carousel").on("click", function (event) {
+    interval = setInterval(function () {
+        $('.carousel').carousel('next');
+    }, 6000);
 
-    if (clickListner) {
-        clearInterval(interval)
-        clickListner = false
-    } else {
-        $(".carousel").carousel("next")
-        interval = setInterval(function () {
-            $('.carousel').carousel('next');
-        }, 6000);
-        clickListner = true;
-    }
+})
+$(".carousel").on("mouseenter", function () {
+    clearInterval(interval)
+
 })
 
+
+
+$(".floatingButtonLeft").on("click", function () {
+    $('.carousel').carousel('prev');
+})
+$(".floatingButtonRight").on("click", function () {
+    $('.carousel').carousel('next');
+})

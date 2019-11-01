@@ -10,6 +10,7 @@ body {
     background-size: cover;
   }
 
+
   .headerDiv > a.brand-logo {
     font-family: 'Leckerli One', cursive;
     font-size: 60px;
@@ -25,14 +26,67 @@ body {
     font-size: 50px;
   }
 
+
+  .headerDiv > a {
+
+    font-family: 'Leckerli One', cursive;
+    font-size: 50px;
+
+  } 
+
 .aboutUs{
-  background-image: url(../Images/about_us.jpeg);
-  /* background-size: cover; */
-  height: 100vh;
-  background-size: cover; 
+
+  background-image: url(../Images/pie1.jpg);  
+ 
+  background-size: cover;
+  height: 100vh;  
+  overflow: auto;
+  width: 100%;
+
 }
 
-.background {
+.aboutUsDiv {
+  
+  border-radius: 5px;
+  background: rgba(234, 231, 220, 0.6); 
+  margin-top: 60px;
+  padding: 25px;
+   overflow: auto;
+   height: auto;
+   -ms-overflow-style: none;
+ 
+ }
+
+.leisa, .cibelle, .ulysses {
+  
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; 
+   
+  
+}
+ i{
+   font-size: 25px;
+   color: black;
+ }
+
+.team {
+  font-family: 'Montserrat', sans-serif; 
+/* 
+  text-shadow: 4px 2px 2px #d8c3a5; */
+  color: black; 
+
+
+}
+.us {
+  font-weight: bold;
+  text-align: justify;
+  font-size: 15px;
+
+
+
+  .background {
+
     background-image: url(../Images/cocktails.jpeg);
     background-size: cover;
     height: 100vh;  
@@ -95,7 +149,6 @@ h3 {
    -ms-overflow-style: none;
  }
 
- .aboutUsDiv {
 
   background-color: rgba(234, 231, 220, 0.9);
   margin-top: 20px;
@@ -103,6 +156,7 @@ h3 {
    overflow: auto;
    height: auto;
    -ms-overflow-style: none;
+
 
  }
 
@@ -123,15 +177,17 @@ h3 {
   .drinkSearchDiv {
     display: flex;
     flex-direction: row;
+    
   }
   .btn, .btn-large, .btn-small, .btn-flat {
     text-transform: capitalize;;
   }
 
-  .bttnSubmit {
+  .bttnSubmit  {
 
-    background-color:  #e85a4f ;
+    background-color:  #e85a4f;
     font-size: 20px;
+    
  }
  #bttnDrinkSearch {
    height: 45px;
@@ -142,18 +198,45 @@ h3 {
    color: white;
  }
 
+ .modalBttn {
+
+  font-size: 15px;
+  background-color:  #e85a4f;
+  color: white;
+ }
+
+ .modalbg {
+   background-color:  rgba(234, 231, 220, 0.6);
+ }
+
+#modal2 {
+
+background-color: #d8c3a5;  
+
+}
+.modal-footer{
+
+  background-color: #d8c3a5 !important;
+
+}
+
+.modal2 {
+  color: white;
+}
+
  .footerDiv {
-    background-color: #d8c3a5;
-    
+    background-color: #d8c3a5;    
     margin-bottom: 0px;
  }
+
+
   #searchRow {
     background-color: rgba(234, 231, 220, 0.9);
     border-radius: 5px;
     margin-top: 75px;
   }
   
-  
+ 
   #recipeSearch, #mainIngredient, #excludedInput, #timeInput, #caloriesInput, #drinkName {
     background-color: rgba(255, 255, 255, 0.5);
     position: relative;
@@ -298,12 +381,30 @@ input::placeholder { /* Chrome/Opera/Safari */
   font-size: 15px;
 }
 
-.headerDiv {
-  font-size: 20px;
-}
 
 .ourLogo{
   font-size: 20px !important; 
+}
+
+
+/* #filterButton {
+  margin-left: 25px;
+} */
+.carousel{
+  position: relative;
+}
+.floatingButtonLeft{
+  position: absolute;
+  left: 5%;
+  top: 40%;
+}
+.floatingButtonRight{
+  position: absolute;
+  right: 5%;
+  top: 40%;
+}
+.arrow{
+  font-size: 40px;
 }
 
 .carousel-item{
@@ -361,6 +462,8 @@ iframe{
 
   .headerDiv > a.brand-logo {
     font-size: 30px;
+
+
 
   }
 }
