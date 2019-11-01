@@ -23,7 +23,7 @@ $("#bttnDrinkSearch").on("click", function drinkSearch(e) {
         //if response it's null a pop up shows up informing the user 
         var drinks = response.drinks;
         if (!drinks) {
-            alert("#Opsi");
+            $("#modal4").modal("open")
         }
 
         drinks.forEach(drink => {
