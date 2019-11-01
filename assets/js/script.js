@@ -1,3 +1,8 @@
+$(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+        
+
 var numIngredients = $("#numIngredients");
 var ingredientDisplay = $("#indgredientDisplay");
 var submitRecipe = $("#submitRecipe");
@@ -41,7 +46,7 @@ function renderRecipes(arrayOfOptions) {
     arrayOfOptions.forEach(element => {
 
         var colDiv = $("<div>").data("site", element.recipe.uri)
-        colDiv.addClass("col s12 col m4 ")
+        colDiv.addClass("col s12 col m6 l4 xl4")
         colDiv.append(cardDiv)
 
         //Append most the stuff to this
@@ -69,7 +74,7 @@ function renderRecipes(arrayOfOptions) {
         cardImgDiv.append(recipeImage)
 
         var cardRevealDiv = $("<div>")
-        cardRevealDiv.addClass("card-reveal reveal")
+        cardRevealDiv.addClass("center-align card-reveal reveal")
         cardDiv.append(cardRevealDiv)
 
         var recipeTitleReveal = $("<span>").text(element.recipe.label)
@@ -96,7 +101,7 @@ function renderRecipes(arrayOfOptions) {
         ingredientColDiv.append(ingredientHeading)
 
         var ingredientList = $("<ul>")
-        ingredientList.addClass("ingredientLi")
+        ingredientList.addClass("left-align ingredientLi")
         ingredientColDiv.append(ingredientList)
 
         var ingredientLine = element.recipe.ingredientLines
@@ -125,7 +130,7 @@ function renderRecipes(arrayOfOptions) {
         var numCalories = calorieCount / numServe
 
         var recipeLink = $("<button>").text("Full Recipe")
-        recipeLink.attr({ "src": element.recipe.url, "id": "fullRecipe", "class": "bttnSubmit waves-effect waves-light btn-small" })
+        recipeLink.attr({ "src": element.recipe.url, "id": "fullRecipe", "class": "center-align bttnSubmit waves-effect waves-light btn-small" })
 
         var caloriesPerServe = $("<p>").text("Calories: " + numCalories.toFixed(0) + "cal/serving")
         timeColDiv.append(cookTime);
@@ -356,6 +361,9 @@ $(".carousel").on("mouseenter", function () {
     clearInterval(interval)
 
 })
+
+
+
 $(".floatingButtonLeft").on("click", function () {
     $('.carousel').carousel('prev');
 })

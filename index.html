@@ -7,14 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Compiled and minified CSS -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Leckerli+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Leckerli+One|Montserrat|Amaranth|Carter+One|Sansita&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css">
 
-    <title>Document</title>
+    <title>Food Recipes</title>
 </head>
 
 <body>
@@ -22,13 +21,21 @@
     <nav>
         <div class="nav-wrapper headerDiv">
             <a href="#" class="brand-logo">Pleasantly</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href=index.html>Food Recipes</a></li>
                 <li><a href=cocktails.html>Cocktail Recipes</a></li>
-                <li><a href=aboutus.html>Contact Us</a></li>
+
+                <li><a href=aboutus.html>About Us</a></li>
+
             </ul>
         </div>
     </nav>
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href=index.html>Food Recipes</a></li>
+        <li><a href=cocktails.html>Cocktail Recipes</a></li>
+        <li><a href=aboutus.html>About Us</a></li>
+    </ul>
 
     <!-- main body -->
 
@@ -40,13 +47,13 @@
                 <!-- <div class="row"> -->
                 <form class="col s12">
                     <div class="row recipeSearchDiv">
-                        <div class="col s5">
-                            <input placeholder="Recipe Name" id="recipeSearch" type="text">
+                        <div class="recSearch col s12 m5">
+                            <input placeholder="Search by Recipe Name" id="recipeSearch" type="text">
                             <a id="submitRecipe" class="bttnSubmit waves-effect waves-light btn-small">Search</a>
                         </div>
-                        <div class="col s5 offset-s2 ingredientsDiv">
+                        <div class="col s12 m5 offset-m2 ingredientsDiv">
                             <a><i id="submitIngredient" class="small material-icons">add_circle_outline</i></a>
-                            <input placeholder="Search by Ingredient (Max 10)" id="mainIngredient" type="text">
+                            <input placeholder="Search by Ingredient" id="mainIngredient" type="text">
 
                             <ul id="ingredientList" style="display: none;">
                             </ul>
@@ -58,9 +65,6 @@
                         </div>
                         <div class="row ">
                         </div>
-                        <!-- Modal Testing -->
-
-
                     </div>
 
                 </form>
@@ -84,7 +88,7 @@
                     </a>
 
                     <div class="carousel-item white-text" href="#one!">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/BPl7D20F2mE" frameborder="0"
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/BPl7D20F2mE" frameborder=""
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                     </div>
@@ -166,7 +170,9 @@
 
     <footer>
         <div class="footer-copyright footerDiv">
-            <p class="grey-text text-lighten-4 center">© 2019 Copyright </p>
+
+            <p class="text-lighten-4 center">© 2019 Copyright </p>
+
         </div>
     </footer>
 
@@ -176,9 +182,13 @@
     <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- our js -->
+    <script src="assets/js/script.js">
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, options);
+        });
 
-
-    <script src="assets/js/script.js"></script>
+    </script>
 </body>
 
 </html>

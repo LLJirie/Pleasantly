@@ -9,6 +9,24 @@ body {
     background-image: url(../Images/ingredients.jpeg);
     background-size: cover;
   }
+
+
+  .headerDiv > a.brand-logo {
+    font-family: 'Leckerli One', cursive;
+    font-size: 60px;
+    text-shadow:
+    1px 4px 0 #000,
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+  
+  a.sidenav-trigger > i {
+    font-size: 50px;
+  }
+
+
   .headerDiv > a {
 
     font-family: 'Leckerli One', cursive;
@@ -44,7 +62,7 @@ body {
   width: 150px;
   height: 150px;
   border-radius: 50%; 
- 
+   
   
 }
  i{
@@ -65,15 +83,15 @@ body {
   text-align: justify;
   font-size: 15px;
 
-}
+
 
   .background {
+
     background-image: url(../Images/cocktails.jpeg);
     background-size: cover;
     height: 100vh;  
     overflow: auto;
-
-  }
+}
 
 .container {
   width: 85%;
@@ -88,18 +106,23 @@ h6 {
     font-size: 20px;
   }
 
+h3 {
+  font-family: 'Sansita', sans-serif;
+
+}
+
   h2 {
     text-align: center;
+    font-family: 'Sansita', sans-serif;
   }
-
-nav {
-    background-color: #E85A4F;
-}
 
 #nav-mobile > li > a {
   font-size: 20px;
   font-weight: bold;
+  color: black;
+  letter-spacing: 1px;
 }
+
 
  footer {
     position: absolute;
@@ -112,6 +135,7 @@ nav {
  div.footerDiv > p {
    margin-bottom: 0;
    padding: 10px;
+   color: black;
  }
 
  .mainDiv {
@@ -126,7 +150,15 @@ nav {
  }
 
 
+  background-color: rgba(234, 231, 220, 0.9);
+  margin-top: 20px;
+  padding: 25px;
+   overflow: auto;
+   height: auto;
+   -ms-overflow-style: none;
 
+
+ }
 
  .mainDiv::-webkit-scrollbar { 
    width: 0 !important; 
@@ -147,12 +179,23 @@ nav {
     flex-direction: row;
     
   }
+  .btn, .btn-large, .btn-small, .btn-flat {
+    text-transform: capitalize;;
+  }
 
   .bttnSubmit  {
 
     background-color:  #e85a4f;
     font-size: 20px;
     
+ }
+ #bttnDrinkSearch {
+   height: 45px;
+   padding: 5px;
+   width: 100px;
+   font-size: 20px;
+   vertical-align: middle;
+   color: white;
  }
 
  .modalBttn {
@@ -202,23 +245,31 @@ background-color: #d8c3a5;
     position: relative;
   }
 
-
-
- 
-
 input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
   border-bottom: none;
+  font-size: 20px;
+  padding-left: 10px;
 }
 
 input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
   border-bottom: 3px solid #e85a4f;
-  box-shadow: none;;
-}
-::placeholder {
-  color: rgb(44, 44, 44);
+  box-shadow: none;
   font-size: 20px;
+}
+
+::placeholder {
+  color: rgb(119, 119, 119);
   padding-left: 10px;
 }
+
+input, input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: black;
+  font-size: 25px; 
+ } 
+
+ #ingredientList > li {
+   font-size: 18px;
+ }
 
   #add-icon {
     align-content: center;
@@ -227,19 +278,9 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
   #submitIngredient {
     color: #e85a4f;
     position: absolute;
-    right: 20px;
+    right: 10px;
     top: 5px;
     z-index: 5;
-  }
-
-  #submitRecipe {
-    margin-top: px;
-  }
-
-  #fullRecipe {
-    margin: 0 35%;
-    font-size: 13px;
-  
   }
 
   .see-recipe {
@@ -256,7 +297,6 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
   }
 
 .grid-example {
-
     border: 1px solid #eee;
     margin: 7px 0;
     text-align: center;
@@ -285,14 +325,14 @@ img.activator {
 
 .card .card-reveal {
  padding: 10px 10px;
- 
- 
 }
 
 .card-reveal {
   position: relative;
-  
+}
 
+.see-recipe > button.bttnSubmit {
+  font-size: 16px;
 }
 
 .card .card-content {
@@ -306,13 +346,8 @@ img.activator {
   padding: 0 20px;
 }
 
-
-
 .ingredientLi, .drinkLi {
-  columns: 2;
-  -webkit-columns: 2;
-  -moz-columns: 2;
-  list-style-position: inside;
+ list-style-position: inside;
 
 }
 .ingredientLi>li{
@@ -348,10 +383,9 @@ input::placeholder { /* Chrome/Opera/Safari */
 
 
 .ourLogo{
-
   font-size: 20px !important; 
-
 }
+
 
 /* #filterButton {
   margin-left: 25px;
@@ -372,16 +406,20 @@ input::placeholder { /* Chrome/Opera/Safari */
 .arrow{
   font-size: 40px;
 }
+
 .carousel-item{
   border-radius:0 0 5px 5px;
   background-color: rgba(234, 231, 220, 0.9);
 }
+
 .spacer{
   height: 50px;
 }
+
 iframe{
   margin-top: 20px;
 }
+
 .editor{
   background-color: rgba(234, 231, 220, 0.9);
   margin-bottom: 0;
@@ -389,32 +427,73 @@ iframe{
   padding: 10px;
   border-radius: 5px 5px 0 0;
 }
+
 @media screen and (max-width: 760px) {
   iframe{
     width: 400px
   }
-
+  .container{
+    width: 100%;
 }
+#searchRow {
+  margin-top: 30px;
+}
+}
+
  @media screen and (max-width: 480px){
-
-  .searchRow{
-
+  .recipeSearchDiv{
     display: flex;
     flex-direction: column;
   }
-}
-  @media screen and (max-width: 800px) {
-   
+  iframe{
+    width: 300px;
+    height: 169px;
+  }
 
+  /* .carousel.carousel-slider .carousel-item {
+    height: 300px;
+    min-height: 250px;
+  }
+
+  .carousel .carousel-slider  {
+    height: 300px;
+    min-height: 250px;
+  } */
+
+  .headerDiv > a.brand-logo {
+    font-size: 30px;
+
+
+
+  }
+}
+
+  @media screen and (max-width: 800px) {
   input::placeholder { /* Chrome/Opera/Safari */
     font-size: 15px;
   }
 }
 
-@media screen and (max-width: 760px) {
-.container{
-  width: 100%;
-  
+@media screen and (max-width: 1024px) {
+  .card .card-title {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .recipeSearchDiv {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+.ingredientLi, .drinkLi {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  list-style-position: inside;
 }
 }
+
+
 
