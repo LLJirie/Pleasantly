@@ -1,8 +1,14 @@
+
+
+
 $(document).ready(function () {
     $('.sidenav').sidenav();
-    setTimeout(() => {
-        $("#modal2").modal("open")
-    }, 2500);
+    if (!localStorage.getItem("visited")) {
+        setTimeout(() => {
+            $("#modal2").modal("open")
+            localStorage.setItem("visited", true)
+        }, 2500);
+    }
 
 });
 
